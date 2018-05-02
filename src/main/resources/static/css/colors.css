@@ -1,4 +1,16 @@
 body{
     background-color: black;
-    color: wheat;
+    color: whitesmoke;
+}
+
+nav.navbar-inverse {
+    background-color: black;
+    border-bottom-color: black;
+}
+
+li.active > a  {
+    background-color: black;
+    border-bottom-color: whitesmoke;
+    border-bottom-style: solid;
+    border-bottom-width: thin;
 }

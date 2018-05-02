@@ -5,10 +5,10 @@
 </head>
 <body>
 
-    <nav th:fragment="publicNav" class="navbar navbar-default navbar-fixed-top">
+    <nav th:fragment="publicNav" class="navbar navbar-inverse navbar-fixed-top">
         <div class="container">
             <div class="navbar-collapse collapse">
-                <ul class="nav navbar-nav">
+                <ul class="nav navbar-nav centered">
                     <li th:classappend="${page == 'VideoGrid' ? 'active' : ''}">
                         <a href="#" th:href="@{/film}">Film og Links</a>
                     </li>
