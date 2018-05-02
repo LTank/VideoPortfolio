@@ -7,14 +7,14 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 @Controller
-public class VideoGridController {
+public class AlbumGalleryController {
 
-    @RequestMapping(value = {"/film", "/liks.html", "/", ""}, method = RequestMethod.GET)
-    public String showVideoGrid(Model model){
+    @RequestMapping(value = {"/foto", "/foto.html"}, method = RequestMethod.GET)
+    public String showAlbumGallery(Model model){
 
-        new NavbarUtil().highlightVideoGrid(model);
+        new NavbarUtil().highlightAlbumGallery(model);
 
-        return "VideoGrid";
+        return "AlbumGallery";
     }
 
 
