@@ -6,7 +6,7 @@
     <!--Denne her normaliserer vores html siders head sektion, så vi kun skal skrive det et sted-->
 
     <!--Bliver injektet i th:replace-->
-    <title>WORKS!</title>
+    <title>SUCCESS</title>
 
     <!--Gør skærmen grøn (bliver injektet oppe i th:replace-->
     <link rel="stylesheet" th:href="@{\css\ViewSpecific\template.css}">
@@ -24,21 +24,29 @@
         <!--Bootstrap row-->
         <div class="row">
 
+
             <!-- Bootstrap kolonner-->
             <div class="col-lg-8 col-lg-offset-2 align-middle">
+                <br>
+                <div class="jumbotron">
+                    <h1>Template Tester</h1>
+                </div>
 
                 <!--text statement-->
-                <h1 th:text="'Hej verden fra thymeleaf!'" class="text-center">Hej verden, uden thymeleaf!</h1>
+                <h2>Thymeleaf Test:</h2>
+                <h3 th:text="'SUCCESS'">FAILED</h3>
 
                 <!--Thymeleaf tests-->
                 <!--if statements-->
-                <div th:if="controllerTest" class="text-center">
-                    <h1>th:if="controllerTest" virker</h1>
-                </div>
+                <h2>Model Test:</h2>
+                <h3 th:if="!controllerTest">FAILED</h3>
+                <h3 th:if="controllerTest">SUCCESS</h3>
 
-                <h1>Hvis baggrunden er grøn, virker link-injection i head tag.</h1>
+                <h2>Injection Tests:</h2>
+                <h3 style="color: white">CSS Link tag: SUCCESS</h3>
+                <h3 style="color: green">CSS Link tag: FAILED</h3>
 
-                <h1>Hvis der står WORKS! i dokument titlen (kig i tab overskriften), virker title-injection i head tag.</h1>
+                <h3>Title-injection: kig i Tab title.</h3>
 
             </div>
         </div>
