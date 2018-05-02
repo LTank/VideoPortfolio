@@ -7,14 +7,14 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 @Controller
-public class VideoGridController {
+public class ContactPageController {
 
-    @RequestMapping(value = {"/film", "/liks.html", "/", ""}, method = RequestMethod.GET)
-    public String showVideoGrid(Model model){
+    @RequestMapping(value = {"/kontakt"}, method = RequestMethod.GET)
+    public String showContactPage(Model model){
 
-        new NavbarUtil().highlightVideoGrid(model);
+        new NavbarUtil().highlightContactsPage(model);
 
-        return "VideoGrid";
+        return "ContactPage";
     }
 
 

@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 @Controller
 public class TemplateController {
 
-    @RequestMapping(value = {"/", ""}, method = RequestMethod.GET)
+    @RequestMapping(value = {"/test"}, method = RequestMethod.GET)
     public String showTemplate(Model model){
         model.addAttribute("controllerTest", true);
         return "template";

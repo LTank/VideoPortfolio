@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<!--Thymeleaf xlmns-->
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+
+<head th:replace="fragments/head :: head(~{::title},~{::link})">
+
+    <!--Bliver injektet i th:replace-->
+    <title>Fotos</title>
+    <link rel="stylesheet" th:href="@{\css\ViewSpecific\AlbumGallery.css}">
+
+</head>
+
+<body>
+    <nav th:insert="fragments/navbars :: publicNav">
+    </nav>
+    <!--Bootstrap container class; giver margin-->
+    <div class="container">
+
+
+        <!--Bootstrap row-->
+        <div class="row">
+            <!-- Bootstrap kolonner-->
+            <div class="col-lg-8 col-lg-offset-2 align-middle">
+                <h1>Albums</h1>
+
+            </div>
+        </div>
+    </div>
+
+    <div th:replace="fragments/scripts :: jqueryAndBootstrap"></div>
+
+</body>
+</html>

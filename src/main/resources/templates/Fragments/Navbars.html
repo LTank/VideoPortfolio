@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+
+</head>
+<body>
+
+    <nav th:fragment="publicNav" class="navbar navbar-default navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+                    <li th:classappend="${page == 'VideoGrid' ? 'active' : ''}">
+                        <a href="#" th:href="@{/film}">Film og Links</a>
+                    </li>
+                    <li th:classappend="${page == 'AlbumGallery' ? 'active' : ''}">
+                        <a href="#" th:href="@{/foto}">Fotogalleri</a>
+                    </li>
+                    <li th:classappend="${page == 'ContactPage' ? 'active' : ''}">
+                        <a href="#" th:href="@{/kontakt}">Kontakt</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+</body>
+</html>
