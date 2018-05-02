@@ -1,10 +1,50 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
+<!--Thymeleaf xlmns-->
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+
+<head th:replace="fragments/head :: head(~{::title},~{::link})">
+    <!--Denne her normaliserer vores html siders head sektion, så vi kun skal skrive det et sted-->
+
+    <!--Bliver injektet i th:replace-->
+    <title>WORKS!</title>
+
+    <!--Gør skærmen grøn (bliver injektet oppe i th:replace-->
+    <link rel="stylesheet" th:href="@{\css\ViewSpecific\template.css}">
+
 </head>
+
 <body>
+    <!--Bootstrap container class; giver margin-->
+    <div class="container">
+
+        <!--<div class="row">
+            <div th:replace="fragments/header :: header"/>
+        </div>-->
+
+        <!--Bootstrap row-->
+        <div class="row">
+
+            <!-- Bootstrap kolonner-->
+            <div class="col-lg-8 col-lg-offset-2 align-middle">
+
+                <!--text statement-->
+                <h1 th:text="'Hej verden fra thymeleaf!'" class="text-center">Hej verden, uden thymeleaf!</h1>
+
+                <!--Thymeleaf tests-->
+                <!--if statements-->
+                <div th:if="controllerTest" class="text-center">
+                    <h1>th:if="controllerTest" virker</h1>
+                </div>
+
+                <h1>Hvis baggrunden er grøn, virker link-injection i head tag.</h1>
+
+                <h1>Hvis der står WORKS! i dokument titlen (kig i tab overskriften), virker title-injection i head tag.</h1>
+
+            </div>
+        </div>
+    </div>
+
+    <div th:replace="fragments/scripts :: jqueryAndBootstrap"></div>
 
 </body>
 </html>
