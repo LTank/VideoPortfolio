@@ -2,6 +2,7 @@ package dk.centralmediaproductions.videoportfolioapp.Entities;
 
 public class Video {
 
+    private int videoId;
     private String title;
     private String description;
     private String videoUrl;
@@ -11,11 +12,20 @@ public class Video {
     public Video() {
     }
 
-    public Video(String title, String description, String videoUrl, String photoUrl) {
+    public Video(int videoId, String title, String description, String videoUrl, String photoUrl) {
+        this.videoId = videoId;
         this.title = title;
         this.description = description;
         this.videoUrl = videoUrl;
         this.photoUrl = photoUrl;
+    }
+
+    public int getVideoId() {
+        return videoId;
+    }
+
+    public void setVideoId(int videoId) {
+        this.videoId = videoId;
     }
 
     public String getTitle() {
@@ -53,7 +63,8 @@ public class Video {
     @Override
     public String toString() {
         return "Video{" +
-                "title='" + title + '\'' +
+                "videoId=" + videoId +
+                ", title='" + title + '\'' +
                 ", description='" + description + '\'' +
                 ", videoUrl='" + videoUrl + '\'' +
                 ", photoUrl='" + photoUrl + '\'' +
