@@ -1,4 +1,28 @@
+/*This is to prevent the "centering jumps"
+when navigating back and forth between pages with enough
+content to have a vertical scroll bar and pages that do not.*/
+html {
+    overflow-y: scroll;
+}
+
 /*padding for top navigation*/
 body {
     padding-top: 70px;
 }
+
+/*Centering of navbar*/
+.navbar-nav {
+    width: 100%;
+    text-align: center;
+}
+.navbar-nav > li {
+    float: none;
+    display: inline-block;
+}
+
+
+
+
+
+
+
