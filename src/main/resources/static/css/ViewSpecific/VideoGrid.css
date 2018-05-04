@@ -1,0 +1,72 @@
+@keyframes videofade {
+    from {opacity: 1;}
+    to {opacity: 0.4;}
+}
+
+@keyframes textfade {
+    from {opacity: 0;}
+    to {opacity: 1;}
+}
+
+a.video img {
+    height: 200px;
+    width: 200px;
+    object-fit: cover;
+    z-index: 50;
+    margin: 10px;
+    opacity: 1;
+}
+
+a.video:hover img {
+    animation: videofade;
+    opacity: 0.4;
+    animation-duration: 0.3s;
+    animation-delay: 0s;
+}
+
+a.video div{
+    /*Lad dette være et overlay*/
+    position: relative;
+    width: 200px;
+    height: 0;
+
+    /*Style*/
+    text-align: center;
+    color: white;
+    font-size: 25px;
+
+    /*Usynlig*/
+    opacity: 0;
+}
+
+a.video:hover div{
+    animation: textfade;
+    opacity: 1;
+    animation-duration: 0.3s;
+    animation-delay: 0s;
+}
+
+a:hover {
+    text-decoration: none;
+}
+
+a.video {
+    font-size: 0;
+}
+
+div.videothumbnail-text-container {
+    top: 27px;
+    left: 10px;
+}
+
+div.videothumbnail-title{
+    top: 28px;
+}
+div.videothumbnail-year{
+    top: 88px;
+}
+div.videothumbnail-jobtitle{
+    top: 58px;
+}
+
+
