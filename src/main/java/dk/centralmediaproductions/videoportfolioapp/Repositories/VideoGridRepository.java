@@ -14,7 +14,11 @@ public class VideoGridRepository {
     private JdbcTemplate jdbc;
 
     public ArrayList<Video> readAllVideos() {
+
         SqlRowSet rs = jdbc.queryForRowSet("SELECT * FROM video");
+
+        //check for null, return empty arraylist to avoid errors
+        if(rs.wasNull()) return new ArrayList<Video>();
 
         ArrayList<Video> videos = new ArrayList<>();
         while (rs.next()){
