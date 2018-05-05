@@ -9,70 +9,185 @@
     <link rel="stylesheet" th:href="@{\css\ViewSpecific\VideoGrid.css}">
 
 </head>
-
 <body>
     <nav th:insert="fragments/navbars :: publicNav">
     </nav>
     <!--Bootstrap container class; giver margin-->
-    <div class="container">
-
+    <div class="">
         <!--Bootstrap row-->
         <div class="row">
             <!-- Bootstrap kolonner-->
-            <div class="col-lg-12 video-list">
-                <a href="https://www.youtube.com/watch?v=q9pREfHHfbE&sns=fb" class="video">
-                    <div class="videothumbnail-text-container">
-                        <div class="videothumbnail-title">ticktock :: A violence of innocence</div>
+            <div class="col-sm-12 video-list">
+                <a href="https://www.youtube.com/watch?v=q9pREfHHfbE&sns=fb" class="video-link">
+                    <img class="video-thumbnail" th:src="@{/img/ticktock.png}"/>
+                    <div class="video-thumbnail-overlay">
+                        <h2 class="video-thumbnail-title">ticktock :: A violence of innocence</h2>
                     </div>
-                    <img th:src="@{/img/ticktock.png}"/>
                 </a>
-                <a href="/foto" class="video">
-                    <div class="videothumbnail-text-container">
-                        <div class="videothumbnail-title">ticktock :: A violence of innocence</div>
+                <a href="https://www.youtube.com/watch?v=q9pREfHHfbE&sns=fb" class="video-link">
+                    <img class="video-thumbnail" th:src="@{/img/seeking_the_dt.png}"/>
+                    <div class="video-thumbnail-overlay">
+                        <h2 class="video-thumbnail-title">Seeking the DT</h2>
                     </div>
-                    <img th:src="@{/img/16_9.png}"/>
                 </a>
-                <a href="/foto" class="video">
-                    <img th:src="@{/img/21_9.png}"/>
+                <a href="https://www.youtube.com/watch?v=q9pREfHHfbE&sns=fb" class="video-link">
+                    <img class="video-thumbnail" th:src="@{/img/1_1.png}"/>
+                    <div class="video-thumbnail-overlay">
+                        <h2 class="video-thumbnail-title">Text of many things :: hej</h2>
+                    </div>
                 </a>
-                <a href="/foto" class="video">
-                    <img th:src="@{/img/4_3.png}"/>
+                <a href="https://www.youtube.com/watch?v=q9pREfHHfbE&sns=fb" class="video-link">
+                    <img class="video-thumbnail" th:src="@{/img/16_9.png}"/>
+                    <div class="video-thumbnail-overlay">
+                        <h2 class="video-thumbnail-title">Let's play</h2>
+                    </div>
                 </a>
-                <a href="/foto" class="video">
-                    <img th:src="@{/img/3_4.png}"/>
+                <a href="https://www.youtube.com/watch?v=q9pREfHHfbE&sns=fb" class="video-link">
+                    <img class="video-thumbnail" th:src="@{/img/ticktock.png}"/>
+                    <div class="video-thumbnail-overlay">
+                        <h2 class="video-thumbnail-title">ticktock :: A violence of innocence</h2>
+                    </div>
                 </a>
-                <a href="/foto" class="video">
-                    <img th:src="@{/img/1_1.png}"/>
+                <a href="https://www.youtube.com/watch?v=q9pREfHHfbE&sns=fb" class="video-link">
+                    <img class="video-thumbnail" th:src="@{/img/seeking_the_dt.png}"/>
+                    <div class="video-thumbnail-overlay">
+                        <h2 class="video-thumbnail-title">Seeking the DT</h2>
+                    </div>
                 </a>
-                <a href="/foto" class="video">
-                    <img th:src="@{/img/16_9.png}"/>
+                <a href="https://www.youtube.com/watch?v=q9pREfHHfbE&sns=fb" class="video-link">
+                    <img class="video-thumbnail" th:src="@{/img/1_1.png}"/>
+                    <div class="video-thumbnail-overlay">
+                        <h2 class="video-thumbnail-title">Text of many things :: hej</h2>
+                    </div>
                 </a>
-                <a href="/foto" class="video">
-                    <img th:src="@{/img/21_9.png}"/>
+                <a href="https://www.youtube.com/watch?v=q9pREfHHfbE&sns=fb" class="video-link">
+                    <img class="video-thumbnail" th:src="@{/img/16_9.png}"/>
+                    <div class="video-thumbnail-overlay">
+                        <h2 class="video-thumbnail-title">Let's play</h2>
+                    </div>
                 </a>
-                <a href="/foto" class="video">
-                    <img th:src="@{/img/4_3.png}"/>
+                <a href="https://www.youtube.com/watch?v=q9pREfHHfbE&sns=fb" class="video-link">
+                    <img class="video-thumbnail" th:src="@{/img/ticktock.png}"/>
+                    <div class="video-thumbnail-overlay">
+                        <h2 class="video-thumbnail-title">ticktock :: A violence of innocence</h2>
+                    </div>
                 </a>
-                <a href="/foto" class="video">
-                    <img th:src="@{/img/3_4.png}"/>
+                <a href="https://www.youtube.com/watch?v=q9pREfHHfbE&sns=fb" class="video-link">
+                    <img class="video-thumbnail" th:src="@{/img/seeking_the_dt.png}"/>
+                    <div class="video-thumbnail-overlay">
+                        <h2 class="video-thumbnail-title">Seeking the DT</h2>
+                    </div>
                 </a>
-                <a href="/foto" class="video">
-                    <img th:src="@{/img/1_1.png}"/>
+                <a href="https://www.youtube.com/watch?v=q9pREfHHfbE&sns=fb" class="video-link">
+                    <img class="video-thumbnail" th:src="@{/img/1_1.png}"/>
+                    <div class="video-thumbnail-overlay">
+                        <h2 class="video-thumbnail-title">Text of many things :: hej</h2>
+                    </div>
                 </a>
-                <a href="/foto" class="video">
-                    <img th:src="@{/img/16_9.png}"/>
+                <a href="https://www.youtube.com/watch?v=q9pREfHHfbE&sns=fb" class="video-link">
+                    <img class="video-thumbnail" th:src="@{/img/16_9.png}"/>
+                    <div class="video-thumbnail-overlay">
+                        <h2 class="video-thumbnail-title">Let's play</h2>
+                    </div>
                 </a>
-                <a href="/foto" class="video">
-                    <img th:src="@{/img/21_9.png}"/>
+                <a href="https://www.youtube.com/watch?v=q9pREfHHfbE&sns=fb" class="video-link">
+                    <img class="video-thumbnail" th:src="@{/img/ticktock.png}"/>
+                    <div class="video-thumbnail-overlay">
+                        <h2 class="video-thumbnail-title">ticktock :: A violence of innocence</h2>
+                    </div>
                 </a>
-                <a href="/foto" class="video">
-                    <img th:src="@{/img/4_3.png}"/>
+                <a href="https://www.youtube.com/watch?v=q9pREfHHfbE&sns=fb" class="video-link">
+                    <img class="video-thumbnail" th:src="@{/img/seeking_the_dt.png}"/>
+                    <div class="video-thumbnail-overlay">
+                        <h2 class="video-thumbnail-title">Seeking the DT</h2>
+                    </div>
                 </a>
-                <a href="/foto" class="video">
-                    <img th:src="@{/img/3_4.png}"/>
+                <a href="https://www.youtube.com/watch?v=q9pREfHHfbE&sns=fb" class="video-link">
+                    <img class="video-thumbnail" th:src="@{/img/1_1.png}"/>
+                    <div class="video-thumbnail-overlay">
+                        <h2 class="video-thumbnail-title">Text of many things :: hej</h2>
+                    </div>
                 </a>
-            </div>
+                <a href="https://www.youtube.com/watch?v=q9pREfHHfbE&sns=fb" class="video-link">
+                    <img class="video-thumbnail" th:src="@{/img/16_9.png}"/>
+                    <div class="video-thumbnail-overlay">
+                        <h2 class="video-thumbnail-title">Let's play</h2>
+                    </div>
+                </a>
+                <a href="https://www.youtube.com/watch?v=q9pREfHHfbE&sns=fb" class="video-link">
+                    <img class="video-thumbnail" th:src="@{/img/ticktock.png}"/>
+                    <div class="video-thumbnail-overlay">
+                        <h2 class="video-thumbnail-title">ticktock :: A violence of innocence</h2>
+                    </div>
+                </a>
+                <a href="https://www.youtube.com/watch?v=q9pREfHHfbE&sns=fb" class="video-link">
+                    <img class="video-thumbnail" th:src="@{/img/seeking_the_dt.png}"/>
+                    <div class="video-thumbnail-overlay">
+                        <h2 class="video-thumbnail-title">Seeking the DT</h2>
+                    </div>
+                </a>
+                <a href="https://www.youtube.com/watch?v=q9pREfHHfbE&sns=fb" class="video-link">
+                    <img class="video-thumbnail" th:src="@{/img/1_1.png}"/>
+                    <div class="video-thumbnail-overlay">
+                        <h2 class="video-thumbnail-title">Text of many things :: hej</h2>
+                    </div>
+                </a>
+                <a href="https://www.youtube.com/watch?v=q9pREfHHfbE&sns=fb" class="video-link">
+                    <img class="video-thumbnail" th:src="@{/img/16_9.png}"/>
+                    <div class="video-thumbnail-overlay">
+                        <h2 class="video-thumbnail-title">Let's play</h2>
+                    </div>
+                </a>
+                <a href="https://www.youtube.com/watch?v=q9pREfHHfbE&sns=fb" class="video-link">
+                    <img class="video-thumbnail" th:src="@{/img/ticktock.png}"/>
+                    <div class="video-thumbnail-overlay">
+                        <h2 class="video-thumbnail-title">ticktock :: A violence of innocence</h2>
+                    </div>
+                </a>
+                <a href="https://www.youtube.com/watch?v=q9pREfHHfbE&sns=fb" class="video-link">
+                    <img class="video-thumbnail" th:src="@{/img/seeking_the_dt.png}"/>
+                    <div class="video-thumbnail-overlay">
+                        <h2 class="video-thumbnail-title">Seeking the DT</h2>
+                    </div>
+                </a>
+                <a href="https://www.youtube.com/watch?v=q9pREfHHfbE&sns=fb" class="video-link">
+                    <img class="video-thumbnail" th:src="@{/img/1_1.png}"/>
+                    <div class="video-thumbnail-overlay">
+                        <h2 class="video-thumbnail-title">Text of many things :: hej</h2>
+                    </div>
+                </a>
+                <a href="https://www.youtube.com/watch?v=q9pREfHHfbE&sns=fb" class="video-link">
+                    <img class="video-thumbnail" th:src="@{/img/16_9.png}"/>
+                    <div class="video-thumbnail-overlay">
+                        <h2 class="video-thumbnail-title">Let's play</h2>
+                    </div>
+                </a>
+                <a href="https://www.youtube.com/watch?v=q9pREfHHfbE&sns=fb" class="video-link">
+                    <img class="video-thumbnail" th:src="@{/img/ticktock.png}"/>
+                    <div class="video-thumbnail-overlay">
+                        <h2 class="video-thumbnail-title">ticktock :: A violence of innocence</h2>
+                    </div>
+                </a>
+                <a href="https://www.youtube.com/watch?v=q9pREfHHfbE&sns=fb" class="video-link">
+                    <img class="video-thumbnail" th:src="@{/img/seeking_the_dt.png}"/>
+                    <div class="video-thumbnail-overlay">
+                        <h2 class="video-thumbnail-title">Seeking the DT</h2>
+                    </div>
+                </a>
+                <a href="https://www.youtube.com/watch?v=q9pREfHHfbE&sns=fb" class="video-link">
+                    <img class="video-thumbnail" th:src="@{/img/1_1.png}"/>
+                    <div class="video-thumbnail-overlay">
+                        <h2 class="video-thumbnail-title">Text of many things :: hej</h2>
+                    </div>
+                </a>
+                <a href="https://www.youtube.com/watch?v=q9pREfHHfbE&sns=fb" class="video-link">
+                    <img class="video-thumbnail" th:src="@{/img/16_9.png}"/>
+                    <div class="video-thumbnail-overlay">
+                        <h2 class="video-thumbnail-title">Let's play</h2>
+                    </div>
+                </a>
 
+            </div>
         </div>
     </div>
 

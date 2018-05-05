@@ -1,72 +1,72 @@
-@keyframes videofade {
-    from {opacity: 1;}
-    to {opacity: 0.4;}
+/*Definrere hvordan billederne skal placeres i forhold til hinanden*/
+.video-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
 }
 
-@keyframes textfade {
-    from {opacity: 0;}
-    to {opacity: 1;}
-}
-
-a.video img {
-    height: 200px;
-    width: 200px;
-    object-fit: cover;
-    z-index: 50;
-    margin: 10px;
-    opacity: 1;
-}
-
-a.video:hover img {
-    animation: videofade;
-    opacity: 0.4;
-    animation-duration: 0.3s;
-    animation-delay: 0s;
-}
-
-a.video div{
-    /*Lad dette være et overlay*/
+/*Parent til overlay + title og billede*/
+a.video-link {
+    /*Fastsætter parent på siden*/
     position: relative;
-    width: 200px;
-    height: 0;
+    height: 200px; /* Sætter højde på alle videoerne*/
+    width: 300px;  /* Sætter bredden på alle videoerne*/
+    overflow: hidden;
+    margin: 10px;
+}
+
+div.video-thumbnail-overlay{
+    /*black div position on top of image*/
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: inherit;
+    width: inherit;
+    opacity: 0; /*hide it*/
+    transition: .5s ease; /*animation on hover*/
+    background-color: #000000; /*black*/
+}
+
+/*Hover effect*/
+div.video-thumbnail-overlay:hover{
+    opacity: 0.8;
+}
+
+
+h2.video-thumbnail-title{
+    /*Fjerner nedarvet margin fra h2*/
+    margin: 0;
+
+    /*Sætter øverste venstre hjørne af text til i midten af billedet*/
+    position: absolute;
+    top: 50%;
+    left: 50%;
+
+    /*Rykker text op til venstre*/
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+
+
+    /*Textbox sizing*/
+    min-width: 200px; /*Sætter størrelsen på tekstboksen*/
 
     /*Style*/
     text-align: center;
-    color: white;
-    font-size: 25px;
-
-    /*Usynlig*/
-    opacity: 0;
+    font-weight: bold;
+    font-size: 14px;
+    color: whitesmoke;
 }
 
-a.video:hover div{
-    animation: textfade;
-    opacity: 1;
-    animation-duration: 0.3s;
-    animation-delay: 0s;
+
+.video-thumbnail {
+    /*Gør at billedet sætter sig pænt*/
+    object-fit: cover; /*Fortæller billedet hvordan den skal resizes*/
+    height: inherit;
+    width: inherit;
+    align-self: center;
 }
 
-a:hover {
-    text-decoration: none;
-}
-
-a.video {
-    font-size: 0;
-}
-
-div.videothumbnail-text-container {
-    top: 27px;
-    left: 10px;
-}
-
-div.videothumbnail-title{
-    top: 28px;
-}
-div.videothumbnail-year{
-    top: 88px;
-}
-div.videothumbnail-jobtitle{
-    top: 58px;
-}
 
 
