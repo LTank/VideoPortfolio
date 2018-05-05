@@ -77,8 +77,8 @@ CREATE TABLE `video` (
   `id` int(11) NOT NULL,
   `title` varchar(60) NOT NULL DEFAULT '60',
   `description` varchar(500) NOT NULL,
-  `video_url` varchar(80) NOT NULL,
-  `photo_url` varchar(80) NOT NULL,
+  `video_url` varchar(500) NOT NULL,
+  `photo_url` varchar(500) NOT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `video_id_uindex` (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;

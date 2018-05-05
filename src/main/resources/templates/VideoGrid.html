@@ -18,6 +18,13 @@
         <div class="row">
             <!-- Bootstrap kolonner-->
             <div class="col-sm-12 video-list">
+                <a th:each="video : ${videos}" th:href="${video.videoUrl}" class="video-link">
+                    <img class="video-thumbnail" th:src="${video.photoUrl}"/>
+                    <div class="video-thumbnail-overlay">
+                        <h2 th:text="${video.title}" class="video-thumbnail-title">ticktock :: A violence of innocence</h2>
+                    </div>
+                </a>
+
                 <a href="https://www.youtube.com/watch?v=q9pREfHHfbE&sns=fb" class="video-link">
                     <img class="video-thumbnail" th:src="@{/img/ticktock.png}"/>
                     <div class="video-thumbnail-overlay">
