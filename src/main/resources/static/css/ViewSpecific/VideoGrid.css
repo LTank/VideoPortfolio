@@ -1,0 +1,72 @@
+/*Definrere hvordan billederne skal placeres i forhold til hinanden*/
+.video-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+/*Parent til overlay + title og billede*/
+a.video-link {
+    /*Fastsætter parent på siden*/
+    position: relative;
+    height: 200px; /* Sætter højde på alle videoerne*/
+    width: 300px;  /* Sætter bredden på alle videoerne*/
+    overflow: hidden;
+    margin: 10px;
+}
+
+div.video-thumbnail-overlay{
+    /*black div position on top of image*/
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: inherit;
+    width: inherit;
+    opacity: 0; /*hide it*/
+    transition: .5s ease; /*animation on hover*/
+    background-color: #000000; /*black*/
+}
+
+/*Hover effect*/
+div.video-thumbnail-overlay:hover{
+    opacity: 0.8;
+}
+
+
+h2.video-thumbnail-title{
+    /*Fjerner nedarvet margin fra h2*/
+    margin: 0;
+
+    /*Sætter øverste venstre hjørne af text til i midten af billedet*/
+    position: absolute;
+    top: 50%;
+    left: 50%;
+
+    /*Rykker text op til venstre*/
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+
+
+    /*Textbox sizing*/
+    min-width: 200px; /*Sætter størrelsen på tekstboksen*/
+
+    /*Style*/
+    text-align: center;
+    font-weight: bold;
+    font-size: 14px;
+    color: whitesmoke;
+}
+
+
+.video-thumbnail {
+    /*Gør at billedet sætter sig pænt*/
+    object-fit: cover; /*Fortæller billedet hvordan den skal resizes*/
+    height: inherit;
+    width: inherit;
+    align-self: center;
+}
+
+
+
