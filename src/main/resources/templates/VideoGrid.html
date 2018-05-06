@@ -9,89 +9,24 @@
     <link rel="stylesheet" th:href="@{\css\ViewSpecific\VideoGrid.css}">
 
 </head>
-
 <body>
     <nav th:insert="fragments/navbars :: publicNav">
     </nav>
     <!--Bootstrap container class; giver margin-->
-    <div class="container">
-
+    <div class="">
         <!--Bootstrap row-->
         <div class="row">
-            <!-- Bootstrap kolonner-->
-            <div class="col-lg-8 col-lg-offset-2 align-middle">
-                <h1>Videos</h1>
-                <h1>Videos</h1>
-                <h1>Videos</h1>
-                <h1>Videos</h1>
-                <h1>Videos</h1>
-                <h1>Videos</h1>
-                <h1>Videos</h1>
-                <h1>Videos</h1>
-                <h1>Videos</h1>
-                <h1>Videos</h1>
-                <h1>Videos</h1>
-                <h1>Videos</h1>
-                <h1>Videos</h1>
-                <h1>Videos</h1>
-                <h1>Videos</h1>
-                <h1>Videos</h1>
-                <h1>Videos</h1>
-                <h1>Videos</h1>
-                <h1>Videos</h1>
-                <h1>Videos</h1>
-                <h1>Videos</h1>
-                <h1>Videos</h1>
-                <h1>Videos</h1>
-                <h1>Videos</h1>
-                <h1>Videos</h1>
-                <h1>Videos</h1>
-                <h1>Videos</h1>
-                <h1>Videos</h1>
-                <h1>Videos</h1>
-                <h1>Videos</h1>
-                <h1>Videos</h1>
-                <h1>Videos</h1>
-                <h1>Videos</h1>
-                <h1>Videos</h1>
-                <h1>Videos</h1>
-                <h1>Videos</h1>
-                <h1>Videos</h1>
-                <h1>Videos</h1>
-                <h1>Videos</h1>
-                <h1>Videos</h1>
-                <h1>Videos</h1>
-                <h1>Videos</h1>
-                <h1>Videos</h1>
-                <h1>Videos</h1>
-                <h1>Videos</h1>
-                <h1>Videos</h1>
-                <h1>Videos</h1>
-                <h1>Videos</h1>
-                <h1>Videos</h1>
-                <h1>Videos</h1>
-                <h1>Videos</h1>
-                <h1>Videos</h1>
-                <h1>Videos</h1>
-                <h1>Videos</h1>
-                <h1>Videos</h1>
-                <h1>Videos</h1>
-                <h1>Videos</h1>
-                <h1>Videos</h1>
-                <h1>Videos</h1>
-                <h1>Videos</h1>
-                <h1>Videos</h1>
-                <h1>Videos</h1>
-                <h1>Videos</h1>
-                <h1>Videos</h1>
-                <h1>Videos</h1>
-                <h1>Videos</h1>
-                <h1>Videos</h1>
-                <h1>Videos</h1>
-                <h1>Videos</h1>
-                <h1>Videos</h1>
+            <!--Developermode-->
+            <div th:replace="fragments/dummydata/videogriddata :: dummy_videos"></div>
 
-
+            <!--The actual videos-->
+            <div class="col-sm-12 video-list">
+                <a th:each="video : ${videos}" th:href="${video.videoUrl}" class="video-link">
+                    <img class="video-thumbnail" th:src="${video.photoUrl}"/>
+                    <div class="video-thumbnail-overlay">
+                        <h2 th:text="${video.title}" class="video-thumbnail-title">ticktock :: A violence of innocence</h2>
+                    </div>
+                </a>
             </div>
         </div>
     </div>
