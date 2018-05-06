@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 @Controller
 public class AlbumGalleryController {
 
-    @RequestMapping(value = {"/foto", "/foto.html"}, method = RequestMethod.GET)
+    @RequestMapping(value = "/foto", method = RequestMethod.GET)
     public String showAlbumGallery(Model model){
 
         new NavbarUtil().highlightAlbumGallery(model);
