@@ -1,6 +1,6 @@
 -- MySQL dump 10.13  Distrib 5.7.19, for Win64 (x86_64)
 --
--- Host: localhost    Database: db
+-- Host: localhost    Database: cmpdb
 -- ------------------------------------------------------
 -- Server version	5.7.19-log
 
@@ -18,7 +18,10 @@
 --
 -- Table structure for table `fk_video_genre`
 --
-
+DROP SCHEMA if EXISTS db;
+drop SCHEMA if EXISTS cmpdb;
+CREATE DATABASE cmpdb;
+USE cmpdb;
 DROP TABLE IF EXISTS `fk_video_genre`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
