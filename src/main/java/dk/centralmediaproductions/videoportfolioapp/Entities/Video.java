@@ -1,7 +1,13 @@
 package dk.centralmediaproductions.videoportfolioapp.Entities;
 
+import javax.persistence.*;
+
+
+@Entity
 public class Video {
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int videoId;
     private String title;
     private String description;
@@ -12,6 +18,12 @@ public class Video {
     public Video() {
     }
 
+    public Video(String title, String description, String videoUrl, String photoUrl) {
+        this.title = title;
+        this.description = description;
+        this.videoUrl = videoUrl;
+        this.photoUrl = photoUrl;
+    }
     public Video(int videoId, String title, String description, String videoUrl, String photoUrl) {
         this.videoId = videoId;
         this.title = title;

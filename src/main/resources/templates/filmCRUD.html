@@ -33,37 +33,48 @@
             </div>
         </div>
         <div class="main-login main-center">
-            <form class="form-horizontal" method="post" action="#">
+            <form th:action="@{/addFilm}" class="form-horizontal" method="get" action="#">
 
                 <div class="form-group loginWidth">
-                    <label for="name" class="cols-sm-2 control-label">Navn</label>
+                    <label for="titel" class="cols-sm-2 control-label">Titel</label>
                     <div class="cols-sm-10">
                         <div class="input-group">
                             <span class="input-group-addon"><i class="fa fa-user fa" aria-hidden="true"></i></span>
-                            <input type="text" class="form-control" name="name" id="name"  placeholder="Navn"/>
+                            <input type="text" class="form-control" name="title" id="titel"  placeholder="Titel"/>
                         </div>
                     </div>
                 </div>
 
                 <div class="form-group">
-                    <label for="file" class="cols-sm-2 control-label">Upload fil</label>
+                    <label for="beskrivelse" class="cols-sm-2 control-label">Beskrivelse</label>
                     <div class="cols-sm-10">
                         <div class="input-group">
-                            <input type="file" class="form-control loginWidth" name="file" id="file"/>
+                            <span class="input-group-addon"><i class="fa fa-user fa" aria-hidden="true"></i></span>
+                            <input type="text" class="form-control loginWidth" name="description" id="beskrivelse"/>
                         </div>
                     </div>
                 </div>
 
                 <div class="form-group loginWidth">
-                    <label for="link" class="cols-sm-2 control-label">Upload link</label>
+                    <label for="link" class="cols-sm-2 control-label">VideoURL</label>
                     <div class="cols-sm-10">
                         <div class="input-group">
                             <span class="input-group-addon"><i class="fa fa-users fa" aria-hidden="true"></i></span>
-                            <input type="text" class="form-control" name="link" id="link"  placeholder="Link"/>
+                            <input type="text" class="form-control" name="videoUrl" id="link"  placeholder="Link"/>
                         </div>
                     </div>
                 </div>
 
+                <div class="form-group loginWidth">
+                    <label for="link2" class="cols-sm-2 control-label">PhotoURL</label>
+                    <div class="cols-sm-10">
+                        <div class="input-group">
+                            <span class="input-group-addon"><i class="fa fa-users fa" aria-hidden="true"></i></span>
+                            <input type="text" class="form-control" name="photoUrl" id="link2"  placeholder="Link"/>
+                        </div>
+                    </div>
+                </div>
+<!--
                 <div class="form-group">
                     <label class="cols-sm-2 control-label">Vælg genre</label>
                     <div class="cols-sm-10">
@@ -76,7 +87,7 @@
                         </div>
                     </div>
                 </div>
-
+-->
                 <div class="form-group ">
                     <input type="submit" value="Opret" class="btn btn-primary btn-lg btn-block login-button"></button>
                 </div>
