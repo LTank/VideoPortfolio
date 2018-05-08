@@ -25,7 +25,7 @@ public class AdminController {
 
     @RequestMapping(value = "/adminFoto", method = RequestMethod.GET)
     public String fotoCRUD() {
-        return "fotoCRUD";
+        return "    fotoCRUD";
     }
 
     @GetMapping("/logout")

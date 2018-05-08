@@ -26,7 +26,7 @@ public class VideoGridController {
 
         model.addAttribute("videos", videoGridRepository.readAllVideos());
 
-        return "VideoGrid";
+        return "videoGrid";
     }
 
 }

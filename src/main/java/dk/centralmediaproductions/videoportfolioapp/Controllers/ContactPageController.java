@@ -14,7 +14,7 @@ public class ContactPageController {
 
         new NavbarUtil().highlightContactsPage(model);
 
-        return "ContactPage";
+        return "contactPage";
     }
 
 
