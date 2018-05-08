@@ -16,60 +16,6 @@
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 --
--- Table structure for table `fk_video_genre`
---
-DROP SCHEMA if EXISTS db;
-drop SCHEMA if EXISTS cmpdb;
-CREATE DATABASE cmpdb;
-USE cmpdb;
-DROP TABLE IF EXISTS `fk_video_genre`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `fk_video_genre` (
-  `fk_video_id` int(11) NOT NULL,
-  `fk_genre_id` int(11) NOT NULL,
-  KEY `fk_video_genre_video_id_fk` (`fk_video_id`),
-  KEY `fk_video_genre_genre_id_fk` (`fk_genre_id`),
-  CONSTRAINT `fk_video_genre_genre_id_fk` FOREIGN KEY (`fk_genre_id`) REFERENCES `genre` (`id`),
-  CONSTRAINT `fk_video_genre_video_id_fk` FOREIGN KEY (`fk_video_id`) REFERENCES `video` (video_id)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-/*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Dumping data for table `fk_video_genre`
---
-
-LOCK TABLES `fk_video_genre` WRITE;
-/*!40000 ALTER TABLE `fk_video_genre` DISABLE KEYS */;
-/*!40000 ALTER TABLE `fk_video_genre` ENABLE KEYS */;
-UNLOCK TABLES;
-
---
--- Table structure for table `genre`
---
-
-DROP TABLE IF EXISTS `genre`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `genre` (
-  `id` int(11) NOT NULL,
-  `title` varchar(60) NOT NULL,
-  `description` varchar(500) NOT NULL,
-  PRIMARY KEY (`id`),
-  UNIQUE KEY `table_genre_id_uindex` (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-/*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Dumping data for table `genre`
---
-
-LOCK TABLES `genre` WRITE;
-/*!40000 ALTER TABLE `genre` DISABLE KEYS */;
-/*!40000 ALTER TABLE `genre` ENABLE KEYS */;
-UNLOCK TABLES;
-
---
 -- Table structure for table `user_roles`
 --
 
@@ -130,14 +76,17 @@ DROP TABLE IF EXISTS `video`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `video` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `video_id` int(11) NOT NULL AUTO_INCREMENT,
   `title` varchar(60) NOT NULL DEFAULT '60',
   `description` varchar(500) NOT NULL,
   `video_url` varchar(500) NOT NULL,
   `photo_url` varchar(500) NOT NULL,
-  PRIMARY KEY (`id`),
-  UNIQUE KEY `video_id_uindex` (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+  `rank_number` int(11) NOT NULL,
+  `genre` varchar(30) NOT NULL,
+  PRIMARY KEY (`video_id`),
+  UNIQUE KEY `video_id_uindex` (`video_id`),
+  UNIQUE KEY `video_rank_number_uindex` (`rank_number`)
+) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -158,4 +107,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2018-05-06 12:58:46
+-- Dump completed on 2018-05-08 23:33:21

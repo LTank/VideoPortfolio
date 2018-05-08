@@ -7,7 +7,18 @@
 
 </head>
 <body>
-<a href="adminVideo.html" th:href="@{/adminVideo}"> <img class="img-fluid" th:src="@{/img/video.jpg}"/></a></body>
-<a href="adminFoto.html" th:href="@{/adminFoto}"> <img class="img-fluid" th:src="@{/img/foto.jpg}"/></a></body>
 
+<div class="flex">
+    <a th:href="@{/adminVideo}" class="bttn">Continue</a>
+</div>
+
+<div class="flex dark">
+    <a th:href="@{/adminFoto}" class="bttn-dark">Continue</a>
+</div>
+
+<!--
+<a href="adminVideo.html" th:href="@{/adminVideo}"> <img class="img-fluid" th:src="@{/img/video.jpg}"/></a>
+<a href="adminFoto.html" th:href="@{/adminFoto}"> <img class="img-fluid" th:src="@{/img/foto.jpg}"/></a>
+-->
+</body>
 </html>
