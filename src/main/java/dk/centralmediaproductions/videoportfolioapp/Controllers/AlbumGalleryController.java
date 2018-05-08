@@ -14,7 +14,7 @@ public class AlbumGalleryController {
 
         new NavbarUtil().highlightAlbumGallery(model);
 
-        return "AlbumGallery";
+        return "albumGallery";
     }
 
 
