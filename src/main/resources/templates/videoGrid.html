@@ -10,25 +10,16 @@
 
 </head>
 <body>
-    <nav th:insert="fragments/navbars :: publicNav">
-    </nav>
+    <div class="container-fluid">
+        <!--<nav th:insert="fragments/uiFragments/navbars :: publicNav">
+        </nav>-->
+        <nav th:insert="fragments/navbars :: publicNav">
+        </nav>
 
-        <!--Bootstrap row-->
-        <div class="row">
-            <!--Developermode-->
-            <div th:replace="fragments/dummyData/videoGridData :: dummy_videos"></div>
+            <!--VideoGrid Fragment-->
+            <div th:replace="fragments/uiFragments/videoGridFragment :: videoGrid"></div>
 
-            <!--The actual videos-->
-            <div class="col-sm-12 video-list">
-                <a th:each="video : ${videos}" th:href="${video.videoUrl}" class="video-link">
-                    <img class="video-thumbnail" th:src="${video.photoUrl}"/>
-                    <div class="video-thumbnail-overlay">
-                        <h2 th:text="${video.title}" class="video-thumbnail-title">ticktock :: A violence of innocence</h2>
-                    </div>
-                </a>
-            </div>
-        </div>
-    <div th:replace="fragments/scripts :: jqueryAndBootstrap"></div>
-
+        <div th:replace="fragments/scripts :: jqueryAndBootstrap"></div>
+    </div>
 </body>
 </html>

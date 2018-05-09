@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<!--Thymeleaf xlmns-->
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+
+<head>
+
+</head>
+<body>
+
+
+<!--Bootstrap row-->
+<div th:fragment="videoGrid" class="row">
+
+    <a class="btn" id="all">All</a>
+    <a class="btn" id="short_film">Short film</a>
+    <a class="btn" id="commercials">Commercials</a>
+    <a class="btn" id="live">Live</a>
+    <a class="btn" id="music_videos">Music videos</a>
+    <!--Developermode-->
+    <div th:replace="fragments/testData/videoGridData :: dummy_videos"></div>
+
+    <!--The actual videos-->
+    <div class="col-sm-12 video-list">
+        <a th:each="video : ${videos}" th:href="${video.videoUrl}" class="video-link">
+            <img class="video-thumbnail" th:src="${video.photoUrl}"/>
+            <div class="video-thumbnail-overlay">
+                <h2 th:text="${video.title}" class="video-thumbnail-title">ticktock :: A violence of innocence</h2>
+            </div>
+        </a>
+    </div>
+</div>
+<div th:replace="fragments/scripts :: jqueryAndBootstrap"></div>
+
+</body>
+</html>
