@@ -9,25 +9,25 @@
 </head>
 <body>
     <div th:fragment="dummy_videos"  th:if="${developermode} == true" class="col-sm-12 video-list">
-        <a th:each="video : ${videos}" th:href="${video.videoUrl}" class="video-link">
+        <a th:each="video : ${videos}" th:href="${video.videoUrl}" class="video-link short_film">
             <img class="video-thumbnail" th:src="${video.photoUrl}"/>
             <div class="video-thumbnail-overlay">
                 <h2 th:text="${video.title}" class="video-thumbnail-title">ticktock :: A violence of innocence</h2>
             </div>
         </a>
-        <a href="https://www.youtube.com/watch?v=q9pREfHHfbE&sns=fb" class="video-link">
+        <a href="https://www.youtube.com/watch?v=q9pREfHHfbE&sns=fb" class="video-link commercials">
             <img class="video-thumbnail" th:src="@{/img/ticktock.png}"/>
             <div class="video-thumbnail-overlay">
                 <h2 class="video-thumbnail-title">ticktock :: A violence of innocence</h2>
             </div>
         </a>
-        <a href="https://www.youtube.com/watch?v=q9pREfHHfbE&sns=fb" class="video-link">
+        <a href="https://www.youtube.com/watch?v=q9pREfHHfbE&sns=fb" class="video-link live">
             <img class="video-thumbnail" th:src="@{/img/seeking_the_dt.png}"/>
             <div class="video-thumbnail-overlay">
                 <h2 class="video-thumbnail-title">Seeking the DT</h2>
             </div>
         </a>
-        <a href="https://www.youtube.com/watch?v=q9pREfHHfbE&sns=fb" class="video-link">
+        <a href="https://www.youtube.com/watch?v=q9pREfHHfbE&sns=fb" class="video-link music_videos">
             <img class="video-thumbnail" th:src="@{/img/1_1.png}"/>
             <div class="video-thumbnail-overlay">
                 <h2 class="video-thumbnail-title">Text of many things :: hej</h2>
