@@ -68,6 +68,53 @@ h2.video-thumbnail-title{
     align-self: center;
 }
 
+a.btn {
+    color: whitesmoke;
+}
+
+.btn-group-justified {
+    padding-left: 10%;
+    padding-right: 10%;
+    position: fixed;
+    z-index: 100;
+    background-color: rgba(0, 0, 0, 0.85);
+
+}
+
+
+.row.genre-picker {
+    padding-top: 51px;
+}
+
+
+.row.video-row {
+    padding-top: 28px;
+}
+
+@media screen and (max-width: 989px) {
+    .btn-group-justified {
+        padding-left: 0%;
+        padding-right: 0%;
+        width: auto;
+    }
+}
+
+@media screen and (max-width: 412px) {
+    .btn-group-justified a.btn {
+        font-size: 10px;
+        padding-right: 0;
+        padding-left: 0;
+    }
+}
+
+@media screen and (max-width: 700px){
+    a.video-link {
+        height: auto;
+        width: 100%;
+    }
+}
+
+
 
 
 

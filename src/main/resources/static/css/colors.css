@@ -14,3 +14,8 @@ li.active > a  {
     border-bottom-style: solid;
     border-bottom-width: thin;
 }
+
+.navbar.navbar-inverse.navbar-fixed-top {
+    background-color: rgba(0, 0, 0, 0.85);
+    border: 0;
+}

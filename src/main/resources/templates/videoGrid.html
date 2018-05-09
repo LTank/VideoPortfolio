@@ -6,18 +6,22 @@
 
     <!--Bliver injektet i th:replace-->
     <title>Portfolio</title>
-    <link rel="stylesheet" th:href="@{\css\ViewSpecific\VideoGrid.css}">
+    <link th:replace="fragments/uiFragments/videoGridFragments :: videoGridCSS"/>
 
 </head>
 <body>
     <div class="container-fluid">
         <!--<nav th:insert="fragments/uiFragments/navbars :: publicNav">
         </nav>-->
-        <nav th:insert="fragments/navbars :: publicNav">
-        </nav>
+        <!--Navbar fragment-->
+        <nav th:replace="fragments/navbars :: publicNav"></nav>
+
+            <!--genre picker fragment-->
+            <div th:replace="fragments/uiFragments/videoGridFragments :: genrePicker"></div>
+
 
             <!--VideoGrid Fragment-->
-            <div th:replace="fragments/uiFragments/videoGridFragment :: videoGrid"></div>
+            <div th:replace="fragments/uiFragments/videoGridFragments :: videoGrid"></div>
 
         <div th:replace="fragments/scripts :: jqueryAndBootstrap"></div>
         <div th:replace="fragments/scripts :: genreSortScript"></div>

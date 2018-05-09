@@ -4,18 +4,14 @@
 
 <head>
 
+    <link th:fragment="videoGridCSS" rel="stylesheet" th:href="@{\css\uiFragmentSpecific\VideoGrid.css}"/>
+
 </head>
 <body>
 
 
-<!--Bootstrap row-->
-<div th:fragment="videoGrid" class="row">
-
-    <a class="btn" id="all">All</a>
-    <a class="btn" id="short_film">Short film</a>
-    <a class="btn" id="commercials">Commercials</a>
-    <a class="btn" id="live">Live</a>
-    <a class="btn" id="music_videos">Music videos</a>
+<!--videogrid UI-->
+<div th:fragment="videoGrid" class="row video-row">
     <!--Developermode-->
     <div th:replace="fragments/testData/videoGridData :: dummy_videos"></div>
 
@@ -27,6 +23,16 @@
                 <h2 th:text="${video.title}" class="video-thumbnail-title">ticktock :: A violence of innocence</h2>
             </div>
         </a>
+    </div>
+</div>
+
+<div th:fragment="genrePicker" class="row genre-picker">
+    <div class="col-sm-12 btn-group btn-group-justified">
+        <a class="btn" id="all">All</a>
+        <a class="btn" id="short_film">Short film</a>
+        <a class="btn" id="commercials">Commercials</a>
+        <a class="btn" id="live">Live</a>
+        <a class="btn" id="music_videos">Music videos</a>
     </div>
 </div>
 <div th:replace="fragments/scripts :: jqueryAndBootstrap"></div>
