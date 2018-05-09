@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 @Controller
 public class VideoGridController {
 
-    private boolean developermode = false;
+    private boolean developermode = true;
 
     @Autowired
     VideoGridRepository videoGridRepository;

@@ -7,7 +7,6 @@
 
     <nav th:fragment="publicNav" class="navbar navbar-inverse navbar-fixed-top">
         <div class="container">
-            <div class="">
                 <ul class="nav navbar-nav centered">
                     <li th:classappend="${page == 'VideoGrid' ? 'active' : ''}">
                         <a href="#" th:href="@{/}">Film og Links</a>
@@ -19,7 +18,13 @@
                         <a href="#" th:href="@{/kontakt}">Kontakt</a>
                     </li>
                 </ul>
-            </div>
+            <ul class="nav navbar-nav centered">
+                <li><a href="#">Alle</a></li>
+                <li><a href="#">KortFilm</a></li>
+                <li><a href="#">Dokumentar</a></li>
+                <li><a href="#">4</a></li>
+                <li><a href="#">5</a></li>
+            </ul>
         </div>
     </nav>
 
