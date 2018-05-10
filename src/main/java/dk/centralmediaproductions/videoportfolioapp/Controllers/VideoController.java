@@ -16,6 +16,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
+import java.util.Optional;
 
 
 @Controller
@@ -56,7 +57,9 @@ public class VideoController {
     }
 
     @RequestMapping(value = "/video", method = RequestMethod.GET)
-    public String viewVideo(Model model){
+    public String viewVideo(@RequestParam long videoId, Model model){
+        Optional<Video> video = videoRepository.findById(videoId);
+        model.addAttribute("thisVideo", video.get());
         return "video";
     }
 

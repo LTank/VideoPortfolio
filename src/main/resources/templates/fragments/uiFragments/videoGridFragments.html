@@ -17,7 +17,7 @@
 
     <!--The actual videos-->
     <div class="col-sm-12 video-list">
-        <a th:each="video : ${videos}" th:href="${video.videoUrl}" class="video-link">
+        <a th:each="video : ${videos}" th:href="'/video?videoId=' + ${video.videoId}" class="video-link">
             <img class="video-thumbnail" th:src="${video.photoUrl}"/>
             <div class="video-thumbnail-overlay">
                 <h2 th:text="${video.title}" class="video-thumbnail-title">ticktock :: A violence of innocence</h2>
