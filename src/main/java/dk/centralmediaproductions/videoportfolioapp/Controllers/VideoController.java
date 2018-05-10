@@ -55,6 +55,10 @@ public class VideoController {
         return "videoGrid";
     }
 
+    @RequestMapping(value = "/video", method = RequestMethod.GET)
+    public String viewVideo(Model model){
+        return "video";
+    }
 
 
 }
