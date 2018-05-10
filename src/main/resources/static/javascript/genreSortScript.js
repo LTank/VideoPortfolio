@@ -1,5 +1,7 @@
 $(document).ready(function() {
 
+    var everything = $(".row, .video-link img");
+
     var allVideos = $(".video-link img");
 
     var commercials = $(".commercials img");
@@ -13,6 +15,8 @@ $(document).ready(function() {
 
     var music_videos = $(".music_videos img");
     var not_music_videos = $(".video-link:not(.music_videos) img");
+
+    everything.fadeTo("slow", 1).delay(500);
 
 
     $("#all").click(function () {
