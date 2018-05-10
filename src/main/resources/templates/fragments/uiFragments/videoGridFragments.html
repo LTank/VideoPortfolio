@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<!--Thymeleaf xlmns-->
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+
+<head>
+
+    <link th:fragment="videoGridCSS" rel="stylesheet" th:href="@{\css\uiFragmentSpecific\VideoGrid.css}"/>
+
+</head>
+<body>
+
+
+<!--videogrid UI-->
+<div th:fragment="videoGrid" class="row video-row">
+    <!--Developermode-->
+    <div th:replace="fragments/testData/videoGridData :: dummy_videos"></div>
+
+    <!--The actual videos-->
+    <div class="col-sm-12 video-list">
+        <a th:each="video : ${videos}" th:href="${video.videoUrl}" class="video-link">
+            <img class="video-thumbnail" th:src="${video.photoUrl}"/>
+            <div class="video-thumbnail-overlay">
+                <h2 th:text="${video.title}" class="video-thumbnail-title">ticktock :: A violence of innocence</h2>
+            </div>
+        </a>
+    </div>
+</div>
+
+<div th:fragment="genrePicker" class="row genre-picker">
+    <div class="col-sm-12 btn-group btn-group-justified">
+        <a class="btn" id="all">All</a>
+        <a class="btn" id="short_film">Short film</a>
+        <a class="btn" id="commercials">Commercials</a>
+        <a class="btn" id="live">Live</a>
+        <a class="btn" id="music_videos">Music videos</a>
+    </div>
+</div>
+<div th:replace="fragments/scripts :: jqueryAndBootstrap"></div>
+
+</body>
+</html>
