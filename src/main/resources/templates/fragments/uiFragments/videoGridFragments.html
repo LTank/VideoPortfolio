@@ -36,13 +36,12 @@
     </div>
 </div>
 
-<!-- admin panel -->
 
-<div th:fragment="adminPanel">
+<div th:fragment="adminPanel" class="row genre-picker" style="opacity: 0;">
     <!--Bootstrap row-->
     <div class="row">
         <!--Developermode-->
-        <div th:replace="fragments/dummyData/videoGridData :: dummy_videos"></div>
+        <div th:replace="fragments/testData/videoGridData :: dummy_videos"></div>
 
         <!--The actual videos-->
         <div class="col-sm-12 video-list">

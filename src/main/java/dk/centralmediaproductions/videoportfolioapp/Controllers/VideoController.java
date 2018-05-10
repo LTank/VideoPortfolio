@@ -67,8 +67,7 @@ public class VideoController {
     public String showAdminVideoGrid(Model model){
         new NavbarUtil().highlightVideoGrid(model);
         new DeveloperModeUtil().setDevelopermode(model, developermode);
-        //sorterer liste
-        //ArrayList<Video> listSortedByRank = new SortByRank().getListByRank(videoRepository.findAll());
+
         ArrayList<Video> rankList = Lists.newArrayList(videoRepository.findAll());
 
         Collections.sort(rankList, Comparator.comparing(s -> s.getRankNumber()));
