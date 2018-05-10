@@ -18,6 +18,10 @@
 --
 -- Table structure for table `user_roles`
 --
+DROP SCHEMA if EXISTS db;
+drop SCHEMA if EXISTS cmpdb;
+CREATE DATABASE cmpdb;
+USE cmpdb;
 
 DROP TABLE IF EXISTS `user_roles`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
