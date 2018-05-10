@@ -23,7 +23,7 @@
 
     <title>Admin</title>
 </head>
-<body>
+<body style="background-color: white">
 <div class="container loginWidth">
     <div class="row main">
         <div class="panel-heading">
@@ -50,7 +50,7 @@
                     <div class="cols-sm-10">
                         <div class="input-group">
                             <span class="input-group-addon"><i class="fa fa-user fa" aria-hidden="true"></i></span>
-                            <input type="text" class="form-control loginWidth" name="description" id="beskrivelse"/>
+                            <input type="text" class="form-contro" name="description" id="beskrivelse" placeholder="Beskrivelse"/>
                         </div>
                     </div>
                 </div>
@@ -74,12 +74,22 @@
                         </div>
                     </div>
                 </div>
-<!--
+
+                <div class="form-group loginWidth">
+                    <label for="rankNumber" class="cols-sm-2 control-label">Rank nr</label>
+                    <div class="cols-sm-10">
+                        <div class="input-group">
+                            <span class="input-group-addon"><i class="fa fa-users fa" aria-hidden="true"></i></span>
+                            <input type="text" class="form-control" name="rankNumber" id="rankNumber"  placeholder="Rank"/>
+                        </div>
+                    </div>
+                </div>
+
                 <div class="form-group">
                     <label class="cols-sm-2 control-label">Vælg genre</label>
                     <div class="cols-sm-10">
                         <div class="input-group">
-                            <select name="film" size="3" class="loginWidth">
+                            <select name="genre" size="3" class="loginWidth">
                                 <option value="genre1">Genre 1</option>
                                 <option value="genre2">Genre 2</option>
                                 <option value="genre3">Genre 3</option>
@@ -87,7 +97,7 @@
                         </div>
                     </div>
                 </div>
--->
+
                 <div class="form-group ">
                     <input type="submit" value="Opret" class="btn btn-primary btn-lg btn-block login-button"></button>
                 </div>
