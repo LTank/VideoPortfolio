@@ -8,7 +8,7 @@ public class Video {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int videoId;
+    private long videoId;
     private String title;
     private String description;
     private String videoUrl;
@@ -30,7 +30,7 @@ public class Video {
         this.genre = genre; //options: "commercials" "live" "music_videos" "short_film"
 
     }
-    public Video(int videoId, String title, String description, String videoUrl, String photoUrl) {
+    public Video(long videoId, String title, String description, String videoUrl, String photoUrl) {
         this.videoId = videoId;
         this.title = title;
         this.description = description;
@@ -38,11 +38,11 @@ public class Video {
         this.photoUrl = photoUrl;
     }
 
-    public int getVideoId() {
+    public long getVideoId() {
         return videoId;
     }
 
-    public void setVideoId(int videoId) {
+    public void setVideoId(long videoId) {
         this.videoId = videoId;
     }
 

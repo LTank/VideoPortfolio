@@ -16,6 +16,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
+import java.util.Optional;
 
 
 @Controller
@@ -40,6 +41,15 @@ public class VideoController {
         return "saved";
     }
 
+    @RequestMapping(value = "/removeFilm", method = RequestMethod.GET)
+    public String removeVideo(@RequestParam long videoId) {
+        Optional<Video> video = videoRepository.findById(videoId);
+        videoRepository.delete(video.get());
+        System.out.println("Succesfully deleted video from database");
+        return "deleted";
+    }
+
+
     @RequestMapping(value = "/", method = RequestMethod.GET)
     public String showVideoGrid(Model model){
         new NavbarUtil().highlightVideoGrid(model);
@@ -53,6 +63,20 @@ public class VideoController {
         return "videoGrid";
     }
 
+    @RequestMapping(value = "/video", method = RequestMethod.GET)
+    public String viewVideo(Model model){
+        return "video";
+    }
+    @RequestMapping(value = "/adminVideoGrid", method = RequestMethod.GET)
+    public String showAdminVideoGrid(Model model){
+        new NavbarUtil().highlightVideoGrid(model);
+        new DeveloperModeUtil().setDevelopermode(model, developermode);
 
+        ArrayList<Video> rankList = Lists.newArrayList(videoRepository.findAll());
+
+        Collections.sort(rankList, Comparator.comparing(s -> s.getRankNumber()));
+        model.addAttribute("videos", rankList);
+        return "adminVideoGrid";
+    }
 
 }

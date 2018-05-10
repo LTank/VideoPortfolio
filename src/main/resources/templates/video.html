@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<!--Thymeleaf xlmns-->
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+
+<head th:replace="fragments/head :: head(~{::title},~{::link})">
+
+    <!--Bliver injektet i th:replace-->
+    <title>Portfolio</title>
+    <link rel="stylesheet" th:href="@{\css\ViewSpecific\video.css}">
+
+</head>
+<body>
+<nav th:insert="fragments/navbars :: publicNav">
+</nav>
+<!--Bootstrap container class; giver margin-->
+<div class="contatiner-fluid">
+    <!--Bootstrap row-->
+    <!--iframe with video-->
+    <div class="row">
+        <div class="resp-container" align="center">
+            <iframe class="resp-iframe" src="https://www.youtube.com/embed/eqURSZ2y6OI" frameborder="0"  allow="autoplay; encrypted-media" allowfullscreen></iframe>
+        </div>
+    </div>
+
+    
+
+</div>
+<div th:replace="fragments/scripts :: jqueryAndBootstrap"></div>
+</body>
+</html>
