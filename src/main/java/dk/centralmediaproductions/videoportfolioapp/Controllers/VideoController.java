@@ -59,9 +59,7 @@ public class VideoController {
         ArrayList<Video> rankList = Lists.newArrayList(videoRepository.findAll());
 
         Collections.sort(rankList, Comparator.comparing(s -> s.getRankNumber()));
-        System.out.println("succes1");
         model.addAttribute("videos", rankList);
-        System.out.println("succes2");
         return "videoGrid";
     }
 

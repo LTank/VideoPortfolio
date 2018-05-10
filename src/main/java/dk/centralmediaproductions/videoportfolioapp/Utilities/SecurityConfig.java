@@ -39,7 +39,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
         http
                 .authorizeRequests()
                 //dem som skal kunne tilgås uden kode
-                .antMatchers(  "/kontakt", "/", "/foto", "/img/**", "/css/**").permitAll()
+                .antMatchers(  "/kontakt", "/", "/foto", "/img/**", "/css/**", "/javascript/**").permitAll()
                 //dem som ikke skal kunne (men kan alligevel midlertidigt).
                 .anyRequest().authenticated().and().formLogin().loginPage("/login").permitAll().loginProcessingUrl("/login").defaultSuccessUrl("/adminOverview", true).and().logout()
                 .logoutRequestMatcher(new AntPathRequestMatcher("/logout"))

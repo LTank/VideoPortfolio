@@ -14,7 +14,7 @@ public class Video {
     private String videoUrl;
     private String photoUrl;
     private int rankNumber;
-    private String genre;
+    private String genre; //options: "commercials" "live" "music_videos" "short_film"
 
 
     public Video() {
@@ -27,7 +27,7 @@ public class Video {
         this.videoUrl = videoUrl;
         this.photoUrl = photoUrl;
         this.rankNumber = rankNumber;
-        this.genre = genre;
+        this.genre = genre; //options: "commercials" "live" "music_videos" "short_film"
 
     }
     public Video(long videoId, String title, String description, String videoUrl, String photoUrl) {
