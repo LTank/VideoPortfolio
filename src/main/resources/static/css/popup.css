@@ -1,0 +1,46 @@
+.overlay {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(0, 0, 0, 0.61);
+    visibility: hidden;
+    opacity: 0;
+}
+
+.overlay:target {
+    visibility: visible;
+    opacity: 1;
+}
+
+.btn {
+    background: #aeb0ad;
+    color: #dce2df;
+    padding: 7px 10px;
+    font-size: 14px;
+    border-radius: 5px;
+    text-align: center;
+    box-shadow: 1px 1px 1px #888888;
+    margin-bottom: 5px;
+    display: inline-block;
+    text-decoration: none;
+}
+
+.btn:hover  {
+    background-color: #1a9a29;
+}
+
+.btn.cancel:hover {
+    background-color: red;
+}
+.popup {
+    margin: 300px auto;
+    text-align: center;
+    font: 14px Prototype, serif;
+    padding: 20px;
+    background: rgb(213, 213, 213);
+    border-radius: 5px;
+    width: 30%;
+    position: relative;
+}
