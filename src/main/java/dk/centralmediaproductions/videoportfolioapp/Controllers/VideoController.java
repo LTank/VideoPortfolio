@@ -63,6 +63,10 @@ public class VideoController {
         return "videoGrid";
     }
 
+    @RequestMapping(value = "/video", method = RequestMethod.GET)
+    public String viewVideo(Model model){
+        return "video";
+    }
     @RequestMapping(value = "/adminVideoGrid", method = RequestMethod.GET)
     public String showAdminVideoGrid(Model model){
         new NavbarUtil().highlightVideoGrid(model);
