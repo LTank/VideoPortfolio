@@ -98,7 +98,7 @@
                             <div class="col-sm-8">
                                 <div class="input-group">
                                     <span class="input-group-addon"><i class="fa fa-user" aria-hidden="true"></i></span>
-                                    <input id="director" type="text" class="form-control" name="photoUrl"   placeholder="Lars Von Trier, Peter Aalbæk etc.."/>
+                                    <input id="director" type="text" class="form-control" name="director"   placeholder="Lars Von Trier, Peter Aalbæk etc.."/>
                                 </div>
                             </div>
                         </div>
@@ -108,7 +108,7 @@
                             <div class="col-sm-8">
                                 <div class="input-group">
                                     <span class="input-group-addon"><i class="fa fa-user" aria-hidden="true"></i></span>
-                                    <input id="production" type="text" class="form-control" name="photoUrl"   placeholder="Produktion"/>
+                                    <input id="production" type="text" class="form-control" name="production"   placeholder="Produktion"/>
                                 </div>
                             </div>
                         </div>
@@ -118,7 +118,7 @@
                             <div class="col-sm-8">
                                 <div class="input-group">
                                     <span class="input-group-addon"><i class="fa fa-user" aria-hidden="true"></i></span>
-                                    <input id="equipment" type="text" class="form-control" name="photoUrl"   placeholder="Udstyr"/>
+                                    <input id="equipment" type="text" class="form-control" name="equipment"   placeholder="Udstyr"/>
                                 </div>
                             </div>
                         </div>
@@ -229,7 +229,7 @@
                             <div class="col-sm-8">
                                 <div class="input-group">
                                     <span class="input-group-addon"><i class="fa fa-user" aria-hidden="true"></i></span>
-                                    <input th:attr="id='production_' + ${video.videoId}" th:value="${video.production}" type="text" class="form-control" name="Produktion" placeholder="Produktion"/>
+                                    <input th:attr="id='production_' + ${video.videoId}" th:value="${video.production}" type="text" class="form-control" name="production" placeholder="Produktion"/>
                                 </div>
                             </div>
                         </div>
