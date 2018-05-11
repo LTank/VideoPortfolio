@@ -5,6 +5,10 @@
     justify-content: center;
 }
 
+.font {
+    font-family: Quattrocento;
+}
+
 /*Parent til overlay + title og billede*/
 a.video-link {
     /*Fastsætter parent på siden*/
