@@ -25,7 +25,9 @@ import java.util.Optional;
 public class VideoController {
 
     private boolean developermode = false;
-    private EmbedFactory embedFactory;
+
+
+    EmbedFactory embedFactory = new EmbedFactory();
 
     @Autowired
     VideoRepository videoRepository;
@@ -45,12 +47,12 @@ public class VideoController {
         return "redirect:/adminVideoGrid";
     }
 
-    @RequestMapping(value = "/removeVideo", method = RequestMethod.GET)
+    @RequestMapping(value = "/removeVideo", method = RequestMethod.POST)
     public String removeVideo(@RequestParam long videoId) {
         Optional<Video> video = videoRepository.findById(videoId);
         videoRepository.delete(video.get());
         System.out.println("Succesfully deleted video from database");
-        return "deleted";
+        return "redirect:/adminVideoGrid";
     }
 
     @RequestMapping(value = "/updateVideo", method = RequestMethod.POST)

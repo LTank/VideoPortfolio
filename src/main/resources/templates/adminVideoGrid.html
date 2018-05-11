@@ -37,7 +37,7 @@
 
     </div>
 
-    <div th:id="newVideo" class="modal fade" role="dialog">
+    <div id="newVideo" class="modal fade" role="dialog">
         <div class="modal-dialog">
 
             <!-- Modal content-->
@@ -49,7 +49,7 @@
                 <div class="modal-body">
 
 
-                    <form th:action="@{/addVideo}" method="post" id="newVideoForm" class="form-horizontal">
+                    <form th:action="@{/addVideo}" th:method="POST" id="newVideoForm" class="form-horizontal">
 
                         <div class="form-group">
                             <label for="title" class="col-sm-3 control-label">Titel</label>
@@ -206,8 +206,13 @@
                         </div>
 
                     </form>
+                    <form th:action="@{/removeVideo}" th:id="'form_delete_'+${video.videoId}" method="post">
+                        <input type="hidden" name="videoId" th:value="${video.videoId}"/>
+                    </form>
+
                 </div>
                 <div class="modal-footer">
+                    <button type="submit" class="btn btn-danger pull-left" th:attr="form='form_delete_' + ${video.videoId}">Slet video!</button>
                     <button type="submit" class="btn btn-success" th:attr="form='form_' + ${video.videoId}">Gem</button>
                     <button type="button" class="btn btn-default" data-dismiss="modal">Annuller</button>
                 </div>
