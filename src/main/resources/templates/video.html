@@ -24,13 +24,22 @@
                 <iframe class="embed-responsive-item" th:attr="src=${thisVideo.videoUrl}" allow="autoplay; encrypted-media" allowfullscreen></iframe>
             </div>
         </div>
-        <span class="h3 viewFont title" th:text="${thisVideo.title}"></span>
-
-        <span class="viewFont description" th:text="${thisVideo.description}"></span>
-
-        <div class="div-width "></div>
     </div>
+    <div class="row">
+        <div class="col-md-12">
+            <span class="h3 viewFont title" th:text="${thisVideo.title}"></span>
+            <div class="div-width "></div>
+        </div>
+    </div>
+    <div class="row row-content">
 
+        <div class="col-sm-12 div-bottom-space">
+            <span class="viewFont" th:text="${thisVideo.description}"></span>
+        </div>
+        <div class="col-sm-12 bottom-space">
+            <!--other info goes here-->
+        </div>
+    </div>
 </div>
 
 <div th:replace="fragments/scripts :: jqueryAndBootstrap"></div>
