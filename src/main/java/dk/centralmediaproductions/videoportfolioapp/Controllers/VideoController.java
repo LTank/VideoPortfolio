@@ -73,7 +73,8 @@ public class VideoController {
 
         Optional<Video> optionalVideo = videoRepository.findById(videoId);
 
-        Video video = new Video(title, description, videoUrl, photoUrl, rankNumber, genre, director, production, equipment);
+        String embeddedUrl = embedFactory.extractUrlFromIframe(videoUrl);
+        Video video = new Video(title, description, embeddedUrl, photoUrl, rankNumber, genre, director, production, equipment);
         video.setVideoId(optionalVideo.get().getVideoId());
 
         //check om rankNumber er optaget og lav plads hvis det ikke er
