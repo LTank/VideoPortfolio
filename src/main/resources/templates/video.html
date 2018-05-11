@@ -13,18 +13,30 @@
 <nav th:insert="fragments/navbars :: publicNav">
 </nav>
 <!--Bootstrap container class; giver margin-->
-<div class="contatiner-fluid">
+<div class="container-fluid">
     <!--Bootstrap row-->
     <!--iframe with video-->
     <div class="row">
-        <div class="resp-container" align="center">
-            <iframe class="resp-iframe" src="https://www.youtube.com/embed/eqURSZ2y6OI" frameborder="0"  allow="autoplay; encrypted-media" allowfullscreen></iframe>
+        <div class="div-width"></div>
+        <div class="col-md-12 ">
+            <div class="embed-responsive embed-responsive-16by9" align="center" >
+                <iframe class="embed-responsive-item" th:attr="src=${thisVideo.videoUrl}" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+            </div>
+        </div>
+        <div class="div-width "></div>
+    </div>
+    <div class="row">
+        <div class="col-sm-12" align="center">
+            <span class="h3 viewFont" th:text="${thisVideo.title}"></span>
+            <p></p>
+            <span class="viewFont" th:text="${thisVideo.description}"></span>
+        </div>
+        <div class="col-sm-12">
+            <h1></h1>
         </div>
     </div>
-
-    
-
 </div>
+
 <div th:replace="fragments/scripts :: jqueryAndBootstrap"></div>
 </body>
 </html>

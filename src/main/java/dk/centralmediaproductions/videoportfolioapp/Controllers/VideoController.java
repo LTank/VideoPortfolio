@@ -3,6 +3,7 @@ package dk.centralmediaproductions.videoportfolioapp.Controllers;
 import com.google.common.collect.Lists;
 import dk.centralmediaproductions.videoportfolioapp.Entities.Video;
 import dk.centralmediaproductions.videoportfolioapp.Repositories.VideoRepository;
+import dk.centralmediaproductions.videoportfolioapp.Utilities.CheckRank;
 import dk.centralmediaproductions.videoportfolioapp.Utilities.DeveloperModeUtil;
 import dk.centralmediaproductions.videoportfolioapp.Utilities.EmbedFactory;
 import dk.centralmediaproductions.videoportfolioapp.Utilities.NavbarUtil;
@@ -67,9 +68,12 @@ public class VideoController {
     }
 
     @RequestMapping(value = "/video", method = RequestMethod.GET)
-    public String viewVideo(Model model){
+    public String viewVideo(@RequestParam long videoId, Model model){
+        Optional<Video> video = videoRepository.findById(videoId);
+        model.addAttribute("thisVideo", video.get());
         return "video";
     }
+
     @RequestMapping(value = "/adminVideoGrid", method = RequestMethod.GET)
     public String showAdminVideoGrid(Model model){
         new NavbarUtil().highlightVideoGrid(model);

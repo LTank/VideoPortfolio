@@ -38,6 +38,7 @@ public class Video {
         this.photoUrl = photoUrl;
     }
 
+
     public long getVideoId() {
         return videoId;
     }
@@ -102,6 +103,8 @@ public class Video {
                 ", description='" + description + '\'' +
                 ", videoUrl='" + videoUrl + '\'' +
                 ", photoUrl='" + photoUrl + '\'' +
+                ", rankNumber=" + rankNumber +
+                ", genre='" + genre + '\'' +
                 '}';
     }
 }
