@@ -18,9 +18,14 @@ public class AdminController {
         return "adminOverview";
     }
 
-    @RequestMapping(value = "/adminCreateFilm", method = RequestMethod.GET)
-    public String adminCreateFilm() {
-        return "adminCreateFilm";
+    @RequestMapping(value = "/adminCreateVideo", method = RequestMethod.GET)
+    public String adminCreateVideo() {
+        return "adminCreateVideo";
+    }
+
+    @RequestMapping(value = "/adminUpdateVideo", method = RequestMethod.GET)
+    public String adminUpdateVideo() {
+        return "adminUpdateVideo";
     }
 
     @RequestMapping(value = "/adminCreateFoto", method = RequestMethod.GET)

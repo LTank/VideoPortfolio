@@ -5,6 +5,7 @@
 <head>
 
     <link th:fragment="videoGridCSS" rel="stylesheet" th:href="@{\css\uiFragmentSpecific\VideoGrid.css}"/>
+    <link th:fragment="adminPanelCSS" rel="stylesheet" th:href="@{\css\uiFragmentSpecific\AdminPanel.css}"/>
 
 </head>
 <body>
@@ -17,7 +18,7 @@
 
     <!--The actual videos-->
     <div class="col-sm-12 video-list">
-        <a th:each="video : ${videos}" th:href="'/video?videoId=' + ${video.videoId}" class="video-link">
+        <a th:each="video : ${videos}" th:href="'/video?videoId=' + ${video.videoId}" th:class="'video-link ' + ${video.genre}">
             <img class="video-thumbnail" th:src="${video.photoUrl}"/>
             <div class="video-thumbnail-overlay">
                 <h2 th:text="${video.title}" class="video-thumbnail-title">ticktock :: A violence of innocence</h2>
@@ -37,34 +38,7 @@
 </div>
 
 
-<div th:fragment="adminPanel" class="row genre-picker" style="opacity: 0;">
-    <!--Bootstrap row-->
-    <div class="row">
-        <!--Developermode-->
-        <div th:replace="fragments/testData/videoGridData :: dummy_videos"></div>
 
-        <!--The actual videos-->
-        <div class="col-sm-12 video-list">
-            <a th:each="video : ${videos}" href="#popup1" class="video-link">
-
-                <img class="video-thumbnail" th:src="${video.photoUrl}"/>
-                <div class="video-thumbnail-overlay">
-                    <h2 th:text="${video.title}" class="video-thumbnail-title">ticktock :: A violence of innocence</h2>
-                </div>
-
-                <div id="popup1" class="overlay">
-                    <div class="popup">
-                        <h2>Er du sikker på du vil slette denne film?</h2>
-                        <a class="btn cancel" href="#" >Afbryd</a>
-
-                        <a th:href="@{/removeFilm(videoId=${video.videoId})}" class="btn" >Fjern</a>
-                    </div>
-                </div>
-
-            </a>
-        </div>
-    </div>
-</div>
 
 <div th:replace="fragments/scripts :: jqueryAndBootstrap"></div>
 

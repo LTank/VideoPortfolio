@@ -5,21 +5,224 @@
 <head th:replace="fragments/head :: head(~{::title},~{::link})">
 
     <!--Bliver injektet i th:replace-->
-    <title>Portfolio</title>
+    <title>AdminPanel :: Videos</title>
     <link th:replace="fragments/uiFragments/videoGridFragments :: videoGridCSS"/>
-
-    <link rel="stylesheet" th:href="@{\css\popup.css}">
+    <link th:replace="fragments/uiFragments/videoGridFragments :: adminPanelCSS"/>
 
 </head>
 <body>
-<nav th:insert="fragments/navbars :: publicNav">
-</nav>
-
-<div th:replace="fragments/uiFragments/videoGridFragments :: adminPanel"></div>
+    <div class="container-fluid">
 
 
-<div th:replace="fragments/scripts :: jqueryAndBootstrap"></div>
-<div th:replace="fragments/scripts :: genreSortScript"></div>
+        <nav th:replace="fragments/navbars :: adminNav"></nav>
+
+        <div th:replace="fragments/uiFragments/videoGridFragments :: genrePicker"></div>
+
+        <div class="row video-row" style="opacity: 0;">
+            <!--Developermode missing for Admin-->
+
+            <!--The actual videos-->
+            <div class="col-sm-12 video-list">
+                <a th:each="video : ${videos}" th:attr="data-target='#' + ${video.videoId}" data-toggle="modal" data-target="#" th:class="'video-link ' + ${video.genre}">
+                    <img class="video-thumbnail" th:src="${video.photoUrl}"/>
+                    <div class="video-thumbnail-overlay">
+                        <h2 th:text="${video.title}" class="video-thumbnail-title">ticktock :: A violence of innocence</h2>
+                    </div>
+                </a>
+            </div>
+        </div>
+
+
+        <!-- Modal -->
+
+    </div>
+
+    <div id="newVideo" class="modal fade" role="dialog">
+        <div class="modal-dialog">
+
+            <!-- Modal content-->
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4  class="modal-title">Opret ny video</h4>
+                </div>
+                <div class="modal-body">
+
+
+                    <form th:action="@{/addVideo}" th:method="POST" id="newVideoForm" class="form-horizontal">
+
+                        <div class="form-group">
+                            <label for="title" class="col-sm-3 control-label">Titel</label>
+
+                            <div class="col-sm-8">
+                                <div class="input-group">
+                                    <span class="input-group-addon"><i class="fa fa-user" aria-hidden="true"></i></span>
+                                    <input id="title" type="text" class="form-control" name="title" placeholder="Titel"/>
+                                </div>
+                            </div>
+                        </div>
+
+
+                        <div class="form-group">
+                            <label for="beskrivelse" class="col-sm-3 control-label">Beskrivelse</label>
+                            <div class="col-sm-8">
+                                <div class="input-group">
+                                    <span class="input-group-addon"><i class="fa fa-user" aria-hidden="true"></i></span>
+                                    <input id="beskrivelse" type="text" class="form-control" name="description" placeholder="Beskrivelse"/>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="link" class="col-sm-3 control-label">VideoURL</label>
+                            <div class="col-sm-8">
+                                <div class="input-group">
+                                    <span class="input-group-addon"><i class="fa fa-link" aria-hidden="true"></i></span>
+                                    <input id="link" type="text" class="form-control" name="videoUrl"   placeholder="Link"/>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="link2" class="col-sm-3 control-label">PhotoURL</label>
+                            <div class="col-sm-8">
+                                <div class="input-group">
+                                    <span class="input-group-addon"><i class="fa fa-link" aria-hidden="true"></i></span>
+                                    <input id="link2" type="text" class="form-control" name="photoUrl"   placeholder="Link"/>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="rankNumber" class="col-sm-3 control-label">Rank nr</label>
+                            <div class="col-sm-8">
+                                <div class="input-group">
+                                    <span class="input-group-addon"><i class="fa fa-users" aria-hidden="true"></i></span>
+                                    <input id="rankNumber" type="text" class="form-control" name="rankNumber"   placeholder="Rank"/>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label">Vælg genre</label>
+                            <div class="col-sm-8">
+                                <select name="genre" class="form-control">
+                                    <option value="commercials">Commercial</option>
+                                    <option value="live">Live</option>
+                                    <option value="music_videos">Music Video</option>
+                                    <option value="short_film">Short Film</option>
+                                </select>
+                            </div>
+                        </div>
+
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="submit" class="btn btn-success" form="newVideoForm">Gem</button>
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Annuller</button>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <div th:each="video : ${videos}" th:id="${video.videoId}" class="modal fade" role="dialog">
+        <div class="modal-dialog">
+
+            <!-- Modal content-->
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 th:text="'Rediger: ' + ${video.title}" class="modal-title">Modal Header</h4>
+                </div>
+                <div class="modal-body">
+
+
+                    <form th:action="@{/updateVideo}" method="post" th:id="'form_'+${video.videoId}" class="form-horizontal">
+
+                        <input type="hidden" th:value="${video.videoId}" name="videoId"/>
+
+                        <div class="form-group">
+                            <label th:attr="for='title_' + ${video.videoId}" class="col-sm-3 control-label">Titel</label>
+
+                            <div class="col-sm-8">
+                                <div class="input-group">
+                                    <span class="input-group-addon"><i class="fa fa-user" aria-hidden="true"></i></span>
+                                    <input th:attr="id='title_' + ${video.videoId}" th:value="${video.title}" type="text" class="form-control" name="title" placeholder="Titel"/>
+                                </div>
+                            </div>
+                        </div>
+
+
+                        <div class="form-group">
+                            <label th:attr="for='beskrivelse_' + ${video.videoId}" class="col-sm-3 control-label">Beskrivelse</label>
+                            <div class="col-sm-8">
+                                <div class="input-group">
+                                    <span class="input-group-addon"><i class="fa fa-user" aria-hidden="true"></i></span>
+                                    <input th:attr="id='beskrivelse_' + ${video.videoId}" th:value="${video.description}" type="text" class="form-control" name="description" placeholder="Beskrivelse"/>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label th:attr="for='link_' + ${video.videoId}" class="col-sm-3 control-label">VideoURL</label>
+                            <div class="col-sm-8">
+                                <div class="input-group">
+                                    <span class="input-group-addon"><i class="fa fa-link" aria-hidden="true"></i></span>
+                                    <input th:attr="id='link_' + ${video.videoId}" th:value="${video.videoUrl}" type="text" class="form-control" name="videoUrl"   placeholder="Link"/>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label th:attr="for='link2_' + ${video.videoId}" class="col-sm-3 control-label">PhotoURL</label>
+                            <div class="col-sm-8">
+                                <div class="input-group">
+                                    <span class="input-group-addon"><i class="fa fa-link" aria-hidden="true"></i></span>
+                                    <input th:attr="id='link2_' + ${video.videoId}" th:value="${video.photoUrl}" type="text" class="form-control" name="photoUrl"   placeholder="Link"/>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label th:attr="for='rankNumber_' + ${video.videoId}" class="col-sm-3 control-label">Rank nr</label>
+                            <div class="col-sm-8">
+                                <div class="input-group">
+                                    <span class="input-group-addon"><i class="fa fa-users" aria-hidden="true"></i></span>
+                                    <input th:attr="id='rankNumber_' + ${video.videoId}" th:value="${video.rankNumber}" type="text" class="form-control" name="rankNumber"   placeholder="Rank"/>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label">Vælg genre</label>
+                            <div class="col-sm-8">
+                                <select name="genre" class="form-control">
+                                    <option th:selected="${video.genre} == 'commercials' ? 'selected'" value="commercials">Commercial</option>
+                                    <option th:selected="${video.genre} == 'live' ? 'selected'" value="live">Live</option>
+                                    <option th:selected="${video.genre} == 'music_videos' ? 'selected'" value="music_videos">Music Video</option>
+                                    <option th:selected="${video.genre} == 'short_film' ? 'selected'" value="short_film">Short Film</option>
+                                </select>
+                            </div>
+                        </div>
+
+                    </form>
+                    <form th:action="@{/removeVideo}" th:id="'form_delete_'+${video.videoId}" method="post">
+                        <input type="hidden" name="videoId" th:value="${video.videoId}"/>
+                    </form>
+
+                </div>
+                <div class="modal-footer">
+                    <button type="submit" class="btn btn-danger pull-left" th:attr="form='form_delete_' + ${video.videoId}">Slet video!</button>
+                    <button type="submit" class="btn btn-success" th:attr="form='form_' + ${video.videoId}">Gem</button>
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Annuller</button>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <div th:replace="fragments/scripts :: jqueryAndBootstrap"></div>
+    <div th:replace="fragments/scripts :: genreSortScript"></div>
 
 </body>
 </html>
