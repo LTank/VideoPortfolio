@@ -38,10 +38,13 @@ public class VideoController {
                            @RequestParam String videoUrl,
                            @RequestParam String photoUrl,
                            @RequestParam int rankNumber,
-                           @RequestParam String genre){
+                           @RequestParam String genre,
+                           @RequestParam String director,
+                           @RequestParam String production,
+                           @RequestParam String equipment){
 
         String embeddedUrl = embedFactory.extractUrlFromIframe(videoUrl);
-        Video video = new Video(title, description, embeddedUrl, photoUrl, rankNumber, genre);
+        Video video = new Video(title, description, embeddedUrl, photoUrl, rankNumber, genre, director, production, equipment);
         videoRepository.save(video);
         System.out.println("Succesfully saved video to database");
         return "redirect:/adminVideoGrid";
@@ -63,11 +66,14 @@ public class VideoController {
             @RequestParam String videoUrl,
             @RequestParam String photoUrl,
             @RequestParam int rankNumber,
-            @RequestParam String genre) {
+            @RequestParam String genre,
+            @RequestParam String director,
+            @RequestParam String production,
+            @RequestParam String equipment) {
 
         Optional<Video> optionalVideo = videoRepository.findById(videoId);
 
-        Video video = new Video(title,description,videoUrl,photoUrl,rankNumber,genre);
+        Video video = new Video(title, description, videoUrl, photoUrl, rankNumber, genre, director, production, equipment);
         video.setVideoId(optionalVideo.get().getVideoId());
 
         //check om rankNumber er optaget og lav plads hvis det ikke er

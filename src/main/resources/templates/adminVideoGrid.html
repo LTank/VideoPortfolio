@@ -94,6 +94,37 @@
                         </div>
 
                         <div class="form-group">
+                            <label for="director" class="col-sm-3 control-label">Instruktør</label>
+                            <div class="col-sm-8">
+                                <div class="input-group">
+                                    <span class="input-group-addon"><i class="fa fa-user" aria-hidden="true"></i></span>
+                                    <input id="director" type="text" class="form-control" name="photoUrl"   placeholder="Lars Von Trier, Peter Aalbæk etc.."/>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="production" class="col-sm-3 control-label">Produktion</label>
+                            <div class="col-sm-8">
+                                <div class="input-group">
+                                    <span class="input-group-addon"><i class="fa fa-user" aria-hidden="true"></i></span>
+                                    <input id="production" type="text" class="form-control" name="photoUrl"   placeholder="Produktion"/>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="equipment" class="col-sm-3 control-label">Udstyr</label>
+                            <div class="col-sm-8">
+                                <div class="input-group">
+                                    <span class="input-group-addon"><i class="fa fa-user" aria-hidden="true"></i></span>
+                                    <input id="equipment" type="text" class="form-control" name="photoUrl"   placeholder="Udstyr"/>
+                                </div>
+                            </div>
+                        </div>
+
+
+                        <div class="form-group">
                             <label for="rankNumber" class="col-sm-3 control-label">Rank nr</label>
                             <div class="col-sm-8">
                                 <div class="input-group">
@@ -179,6 +210,36 @@
                                 <div class="input-group">
                                     <span class="input-group-addon"><i class="fa fa-link" aria-hidden="true"></i></span>
                                     <input th:attr="id='link2_' + ${video.videoId}" th:value="${video.photoUrl}" type="text" class="form-control" name="photoUrl"   placeholder="Link"/>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label th:attr="for='director_' + ${video.videoId}" class="col-sm-3 control-label">Instruktør</label>
+                            <div class="col-sm-8">
+                                <div class="input-group">
+                                    <span class="input-group-addon"><i class="fa fa-user" aria-hidden="true"></i></span>
+                                    <input th:attr="id='director_' + ${video.videoId}" th:value="${video.director}" type="text" class="form-control" name="director" placeholder="Instruktør"/>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label th:attr="for='production_' + ${video.videoId}" class="col-sm-3 control-label">Produktion</label>
+                            <div class="col-sm-8">
+                                <div class="input-group">
+                                    <span class="input-group-addon"><i class="fa fa-user" aria-hidden="true"></i></span>
+                                    <input th:attr="id='production_' + ${video.videoId}" th:value="${video.production}" type="text" class="form-control" name="Produktion" placeholder="Produktion"/>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label th:attr="for='equipment_' + ${video.videoId}" class="col-sm-3 control-label">Udstyr</label>
+                            <div class="col-sm-8">
+                                <div class="input-group">
+                                    <span class="input-group-addon"><i class="fa fa-user" aria-hidden="true"></i></span>
+                                    <input th:attr="id='equipment_' + ${video.videoId}" th:value="${video.equipment}" type="text" class="form-control" name="equipment" placeholder="Udstyr"/>
                                 </div>
                             </div>
                         </div>
