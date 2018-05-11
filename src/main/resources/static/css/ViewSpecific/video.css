@@ -5,3 +5,21 @@
 .viewFont {
     font-family: "Quattrocento";
 }
+
+.title {
+    position: absolute;
+    top: 600px;
+    left: 150px;
+}
+
+.description {
+    position: absolute;
+    top: 650px;
+    left: 150px;
+}
+
+.col-md-12 {
+    height: 80%;
+    width: 80%;
+    margin-left: 11%;
+}
