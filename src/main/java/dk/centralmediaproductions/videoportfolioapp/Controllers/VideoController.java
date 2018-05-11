@@ -28,7 +28,7 @@ public class VideoController {
     @Autowired
     VideoRepository videoRepository;
 
-    @RequestMapping(value = "/addFilm", method = RequestMethod.GET)
+    @RequestMapping(value = "/addVideo", method = RequestMethod.GET)
     public String addVideo(@RequestParam String title,
                            @RequestParam String description,
                            @RequestParam String videoUrl,
@@ -46,12 +46,20 @@ public class VideoController {
         return "saved";
     }
 
-    @RequestMapping(value = "/removeFilm", method = RequestMethod.GET)
+    @RequestMapping(value = "/removeVideo", method = RequestMethod.GET)
     public String removeVideo(@RequestParam long videoId) {
         Optional<Video> video = videoRepository.findById(videoId);
         videoRepository.delete(video.get());
         System.out.println("Succesfully deleted video from database");
         return "deleted";
+    }
+
+    @RequestMapping(value = "/updateVideo", method = RequestMethod.GET)
+    public String updateVideo(@RequestParam long videoId) {
+        Optional<Video> video = videoRepository.findById(videoId);
+        videoRepository.save(video.get());
+        System.out.println("Succesfully updated video in database");
+        return "saved";
     }
 
 
