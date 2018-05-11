@@ -28,7 +28,7 @@ public class VideoController {
     @Autowired
     VideoRepository videoRepository;
 
-    @RequestMapping(value = "/addFilm", method = RequestMethod.GET)
+    @RequestMapping(value = "/addVideo", method = RequestMethod.POST)
     public String addVideo(@RequestParam String title,
                            @RequestParam String description,
                            @RequestParam String videoUrl,
@@ -43,15 +43,38 @@ public class VideoController {
 
         videoRepository.save(video);
         System.out.println("Succesfully saved video to database");
-        return "saved";
+        return "redirect:/adminVideoGrid";
     }
 
-    @RequestMapping(value = "/removeFilm", method = RequestMethod.GET)
+    @RequestMapping(value = "/removeVideo", method = RequestMethod.GET)
     public String removeVideo(@RequestParam long videoId) {
         Optional<Video> video = videoRepository.findById(videoId);
         videoRepository.delete(video.get());
         System.out.println("Succesfully deleted video from database");
         return "deleted";
+    }
+
+    @RequestMapping(value = "/updateVideo", method = RequestMethod.POST)
+    public String updateVideo(
+            @RequestParam long videoId,
+            @RequestParam String title,
+            @RequestParam String description,
+            @RequestParam String videoUrl,
+            @RequestParam String photoUrl,
+            @RequestParam int rankNumber,
+            @RequestParam String genre) {
+
+        Optional<Video> optionalVideo = videoRepository.findById(videoId);
+
+        Video video = new Video(title,description,videoUrl,photoUrl,rankNumber,genre);
+        video.setVideoId(optionalVideo.get().getVideoId());
+
+        //check om rankNumber er optaget og lav plads hvis det ikke er
+        new CheckRank().checkRanking(rankNumber, videoRepository);
+
+        videoRepository.save(video);
+
+        return "redirect:/adminVideoGrid";
     }
 
 
