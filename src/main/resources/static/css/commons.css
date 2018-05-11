@@ -17,6 +17,10 @@ html {
     text-align: center;
     margin-bottom: 0px;
 }
+
+.adminNavbar {
+    width: initial;
+}
 .navbar-nav > li {
     float: none;
     display: inline-block;

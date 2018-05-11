@@ -21,5 +21,22 @@
         </div>
     </nav>
 
+    <nav th:fragment="adminNav" class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container-fluid">
+            <h1 class="navbar-header">Rediger videoer</h1>
+            <ul class="nav navbar-nav adminNavbar ">
+                <li>
+                    <a th:href="@{/admin}" class="backBtn">GO BACK</a>
+                </li>
+            </ul>
+            <ul class="nav navbar-nav adminNavbar">
+                <li >
+                    <a href="#" class="addVideoBtn">ADD VIDEO</a>
+                </li>
+            </ul>
+
+        </div>
+    </nav>
+
 </body>
 </html>

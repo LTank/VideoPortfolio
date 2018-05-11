@@ -54,12 +54,27 @@ public class VideoController {
         return "deleted";
     }
 
-    @RequestMapping(value = "/updateVideo", method = RequestMethod.GET)
-    public String updateVideo(@RequestParam long videoId) {
-        Optional<Video> video = videoRepository.findById(videoId);
-        videoRepository.save(video.get());
+    @RequestMapping(value = "/updateVideo", method = RequestMethod.POST)
+    public String updateVideo(
+            @RequestParam long videoId,
+            @RequestParam String title,
+            @RequestParam String description,
+            @RequestParam String videoUrl,
+            @RequestParam String photoUrl,
+            @RequestParam int rankNumber,
+            @RequestParam String genre) {
+
+        Optional<Video> optionalVideo = videoRepository.findById(videoId);
+
+        Video video = new Video(title,description,videoUrl,photoUrl,rankNumber,genre);
+        video.setVideoId(optionalVideo.get().getVideoId());
+
+        //check om rankNumber er optaget og lav plads hvis det ikke er
+        new CheckRank().checkRanking(rankNumber, videoRepository);
+        
+        videoRepository.save(video);
         System.out.println("Succesfully updated video in database");
-        return "saved";
+        return "redirect:/adminVideoGrid";
     }
 
 
