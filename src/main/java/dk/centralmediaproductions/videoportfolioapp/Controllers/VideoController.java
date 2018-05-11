@@ -3,6 +3,7 @@ package dk.centralmediaproductions.videoportfolioapp.Controllers;
 import com.google.common.collect.Lists;
 import dk.centralmediaproductions.videoportfolioapp.Entities.Video;
 import dk.centralmediaproductions.videoportfolioapp.Repositories.VideoRepository;
+import dk.centralmediaproductions.videoportfolioapp.Utilities.CheckRank;
 import dk.centralmediaproductions.videoportfolioapp.Utilities.DeveloperModeUtil;
 import dk.centralmediaproductions.videoportfolioapp.Utilities.NavbarUtil;
 import dk.centralmediaproductions.videoportfolioapp.Utilities.SortByRank;
@@ -35,7 +36,11 @@ public class VideoController {
                            @RequestParam int rankNumber,
                            @RequestParam String genre){
 
+        //check om rankNumber er optaget og lav plads hvis det ikke er
+        new CheckRank().checkRanking(rankNumber, videoRepository);
+
         Video video = new Video(title, description, videoUrl, photoUrl, rankNumber, genre);
+
         videoRepository.save(video);
         System.out.println("Succesfully saved video to database");
         return "saved";
@@ -69,6 +74,7 @@ public class VideoController {
         model.addAttribute("thisVideo", video.get());
         return "video";
     }
+
     @RequestMapping(value = "/adminVideoGrid", method = RequestMethod.GET)
     public String showAdminVideoGrid(Model model){
         new NavbarUtil().highlightVideoGrid(model);
