@@ -28,7 +28,7 @@ public class VideoController {
     @Autowired
     VideoRepository videoRepository;
 
-    @RequestMapping(value = "/addVideo", method = RequestMethod.GET)
+    @RequestMapping(value = "/addVideo", method = RequestMethod.POST)
     public String addVideo(@RequestParam String title,
                            @RequestParam String description,
                            @RequestParam String videoUrl,
@@ -43,7 +43,7 @@ public class VideoController {
 
         videoRepository.save(video);
         System.out.println("Succesfully saved video to database");
-        return "saved";
+        return "redirect:/adminVideoGrid";
     }
 
     @RequestMapping(value = "/removeVideo", method = RequestMethod.GET)
