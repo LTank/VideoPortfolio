@@ -17,24 +17,20 @@
     <!--Bootstrap row-->
     <!--iframe with video-->
     <div class="row">
-        <div class="div-width"></div>
-        <div class="col-md-12 ">
+
+        <div class="col-md-12">
+
             <div class="embed-responsive embed-responsive-16by9" align="center" >
                 <iframe class="embed-responsive-item" th:attr="src=${thisVideo.videoUrl}" allow="autoplay; encrypted-media" allowfullscreen></iframe>
             </div>
         </div>
+        <span class="h3 viewFont title" th:text="${thisVideo.title}"></span>
+
+        <span class="viewFont description" th:text="${thisVideo.description}"></span>
+
         <div class="div-width "></div>
     </div>
-    <div class="row">
-        <div class="col-sm-12" align="center">
-            <span class="h3 viewFont" th:text="${thisVideo.title}"></span>
-            <p></p>
-            <span class="viewFont" th:text="${thisVideo.description}"></span>
-        </div>
-        <div class="col-sm-12">
-            <h1></h1>
-        </div>
-    </div>
+
 </div>
 
 <div th:replace="fragments/scripts :: jqueryAndBootstrap"></div>
