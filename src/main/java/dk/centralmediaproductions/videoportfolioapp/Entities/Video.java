@@ -15,19 +15,24 @@ public class Video {
     private String photoUrl;
     private int rankNumber;
     private String genre; //options: "commercials" "live" "music_videos" "short_film"
-
+    private String director;
+    private String production;
+    private String equipment;
 
     public Video() {
     }
 
 
-    public Video(String title, String description, String videoUrl, String photoUrl, int rankNumber, String genre) {
+    public Video(String title, String description, String videoUrl, String photoUrl, int rankNumber, String genre, String director, String production, String equipment) {
         this.title = title;
         this.description = description;
         this.videoUrl = videoUrl;
         this.photoUrl = photoUrl;
         this.rankNumber = rankNumber;
-        this.genre = genre; //options: "commercials" "live" "music_videos" "short_film"
+        this.genre = genre;
+        this.director = director;
+        this.production = production;
+        this.equipment = equipment;//options: "commercials" "live" "music_videos" "short_film"
 
     }
     public Video(long videoId, String title, String description, String videoUrl, String photoUrl) {
@@ -38,8 +43,42 @@ public class Video {
         this.photoUrl = photoUrl;
     }
 
+    public Video(long videoId, String title, String description, String videoUrl, String photoUrl, int rankNumber, String genre, String director, String production, String equipment) {
+        this.videoId = videoId;
+        this.title = title;
+        this.description = description;
+        this.videoUrl = videoUrl;
+        this.photoUrl = photoUrl;
+        this.rankNumber = rankNumber;
+        this.genre = genre;
+        this.director = director;
+        this.production = production;
+        this.equipment = equipment;
+    }
 
+    public String getDirector() {
+        return director;
+    }
 
+    public void setDirector(String director) {
+        this.director = director;
+    }
+
+    public String getProduction() {
+        return production;
+    }
+
+    public void setProduction(String production) {
+        this.production = production;
+    }
+
+    public String getEquipment() {
+        return equipment;
+    }
+
+    public void setEquipment(String equipment) {
+        this.equipment = equipment;
+    }
 
     public long getVideoId() {
         return videoId;
@@ -107,6 +146,9 @@ public class Video {
                 ", photoUrl='" + photoUrl + '\'' +
                 ", rankNumber=" + rankNumber +
                 ", genre='" + genre + '\'' +
+                ", director='" + director + '\'' +
+                ", production='" + production + '\'' +
+                ", equipment='" + equipment + '\'' +
                 '}';
     }
 }

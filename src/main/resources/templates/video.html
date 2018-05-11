@@ -37,7 +37,9 @@
             <span class="viewFont" th:text="${thisVideo.description}"></span>
         </div>
         <div class="col-sm-12 bottom-space">
-            <!--other info goes here-->
+            <div class="div-bottom-space viewFont"  th:if="${thisVideo.director} != ''" th:text="'Instruktør: ' + ${thisVideo.director}"></div>
+            <div class="div-bottom-space viewFont" th:if="${thisVideo.production} != ''" th:text="'Produktion: ' + ${thisVideo.production}"></div>
+            <div class="div-bottom-space viewFont" th:if="${thisVideo.equipment} != ''" th:text="'Udstyr: ' + ${thisVideo.equipment}"></div>
         </div>
     </div>
 </div>
