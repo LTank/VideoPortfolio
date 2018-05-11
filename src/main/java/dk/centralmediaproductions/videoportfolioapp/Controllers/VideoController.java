@@ -71,9 +71,9 @@ public class VideoController {
 
         //check om rankNumber er optaget og lav plads hvis det ikke er
         new CheckRank().checkRanking(rankNumber, videoRepository);
-        
+
         videoRepository.save(video);
-        System.out.println("Succesfully updated video in database");
+
         return "redirect:/adminVideoGrid";
     }
 
