@@ -11,7 +11,7 @@
 
 
 <!--videogrid UI-->
-<div th:fragment="videoGrid" class="row video-row">
+<div th:fragment="videoGrid" class="row video-row" style="opacity: 0;">
     <!--Developermode-->
     <div th:replace="fragments/testData/videoGridData :: dummy_videos"></div>
 
@@ -26,7 +26,7 @@
     </div>
 </div>
 
-<div th:fragment="genrePicker" class="row genre-picker">
+<div th:fragment="genrePicker" class="row genre-picker" style="opacity: 0;">
     <div class="col-sm-12 btn-group btn-group-justified">
         <a class="btn" id="all">All</a>
         <a class="btn" id="short_film">Short film</a>
@@ -35,6 +35,37 @@
         <a class="btn" id="music_videos">Music videos</a>
     </div>
 </div>
+
+
+<div th:fragment="adminPanel" class="row genre-picker" style="opacity: 0;">
+    <!--Bootstrap row-->
+    <div class="row">
+        <!--Developermode-->
+        <div th:replace="fragments/testData/videoGridData :: dummy_videos"></div>
+
+        <!--The actual videos-->
+        <div class="col-sm-12 video-list">
+            <a th:each="video : ${videos}" href="#popup1" class="video-link">
+
+                <img class="video-thumbnail" th:src="${video.photoUrl}"/>
+                <div class="video-thumbnail-overlay">
+                    <h2 th:text="${video.title}" class="video-thumbnail-title">ticktock :: A violence of innocence</h2>
+                </div>
+
+                <div id="popup1" class="overlay">
+                    <div class="popup">
+                        <h2>Er du sikker på du vil slette denne film?</h2>
+                        <a class="btn cancel" href="#" >Afbryd</a>
+
+                        <a th:href="@{/removeFilm(videoId=${video.videoId})}" class="btn" >Fjern</a>
+                    </div>
+                </div>
+
+            </a>
+        </div>
+    </div>
+</div>
+
 <div th:replace="fragments/scripts :: jqueryAndBootstrap"></div>
 
 </body>

@@ -41,6 +41,15 @@ public class VideoController {
         return "saved";
     }
 
+    @RequestMapping(value = "/removeFilm", method = RequestMethod.GET)
+    public String removeVideo(@RequestParam long videoId) {
+        Optional<Video> video = videoRepository.findById(videoId);
+        videoRepository.delete(video.get());
+        System.out.println("Succesfully deleted video from database");
+        return "deleted";
+    }
+
+
     @RequestMapping(value = "/", method = RequestMethod.GET)
     public String showVideoGrid(Model model){
         new NavbarUtil().highlightVideoGrid(model);
@@ -50,9 +59,7 @@ public class VideoController {
         ArrayList<Video> rankList = Lists.newArrayList(videoRepository.findAll());
 
         Collections.sort(rankList, Comparator.comparing(s -> s.getRankNumber()));
-        System.out.println("succes1");
         model.addAttribute("videos", rankList);
-        System.out.println("succes2");
         return "videoGrid";
     }
 
@@ -62,6 +69,16 @@ public class VideoController {
         model.addAttribute("thisVideo", video.get());
         return "video";
     }
+    @RequestMapping(value = "/adminVideoGrid", method = RequestMethod.GET)
+    public String showAdminVideoGrid(Model model){
+        new NavbarUtil().highlightVideoGrid(model);
+        new DeveloperModeUtil().setDevelopermode(model, developermode);
 
+        ArrayList<Video> rankList = Lists.newArrayList(videoRepository.findAll());
+
+        Collections.sort(rankList, Comparator.comparing(s -> s.getRankNumber()));
+        model.addAttribute("videos", rankList);
+        return "adminVideoGrid";
+    }
 
 }

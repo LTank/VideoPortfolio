@@ -8,7 +8,7 @@ nav.navbar-inverse {
     border-bottom-color: black;
 }
 
-li.active > a  {
+li.active > a, .btn.active {
     background-color: black;
     border-bottom-color: whitesmoke;
     border-bottom-style: solid;

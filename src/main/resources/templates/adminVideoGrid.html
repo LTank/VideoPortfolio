@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<!--Thymeleaf xlmns-->
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+
+<head th:replace="fragments/head :: head(~{::title},~{::link})">
+
+    <!--Bliver injektet i th:replace-->
+    <title>Portfolio</title>
+    <link th:replace="fragments/uiFragments/videoGridFragments :: videoGridCSS"/>
+
+    <link rel="stylesheet" th:href="@{\css\popup.css}">
+
+</head>
+<body>
+<nav th:insert="fragments/navbars :: publicNav">
+</nav>
+
+<div th:replace="fragments/uiFragments/videoGridFragments :: adminPanel"></div>
+
+
+<div th:replace="fragments/scripts :: jqueryAndBootstrap"></div>
+<div th:replace="fragments/scripts :: genreSortScript"></div>
+
+</body>
+</html>

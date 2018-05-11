@@ -17,7 +17,7 @@
     <div class="container">
 
         <!--Bootstrap row-->
-        <div class="row">
+        <div class="row" style="opacity: 0;">
             <!-- Bootstrap kolonner-->
             <div class="col-sm-8 align-left">
                 <img width="750" height="450" th:src="@{/img/cmpSkull.gif}" class="img-responsive" title="Central Media Productions">
@@ -37,6 +37,7 @@
     </div>
 
     <div th:replace="fragments/scripts :: jqueryAndBootstrap"></div>
+    <div th:replace="fragments/scripts :: genreSortScript"></div>
 
 </body>
 </html>

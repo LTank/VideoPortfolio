@@ -18,7 +18,7 @@
 
 
         <!--Bootstrap row-->
-        <div class="row">
+        <div class="row" style="opacity: 0;">
             <!-- Bootstrap kolonner-->
             <div class="col-lg-8 col-lg-offset-2 align-middle">
                 <h1>Albums</h1>
@@ -28,6 +28,7 @@
     </div>
 
     <div th:replace="fragments/scripts :: jqueryAndBootstrap"></div>
+    <div th:replace="fragments/scripts :: genreSortScript"></div>
 
 </body>
 </html>
