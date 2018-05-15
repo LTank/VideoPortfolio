@@ -7,7 +7,7 @@
 
     <nav th:fragment="publicNav" class="navbar navbar-inverse navbar-fixed-top">
         <div class="container">
-                <ul class="nav navbar-nav centered">
+                <ul class="nav navbar-nav centered font">
                     <li th:classappend="${page == 'VideoGrid' ? 'active' : ''}">
                         <a href="#" th:href="@{/}">Film og Links</a>
                     </li>
@@ -32,6 +32,11 @@
             <ul class="nav navbar-nav adminNavbar">
                 <li >
                     <a data-toggle="modal" data-target="#newVideo" class="addVideoBtn">ADD VIDEO</a>
+                </li>
+            </ul>
+            <ul class="nav navbar-nav adminNavbar ">
+                <li>
+                    <a th:href="@{/logout}" class="signOut">SIGN OUT</a>
                 </li>
             </ul>
 

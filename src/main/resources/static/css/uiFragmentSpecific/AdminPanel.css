@@ -21,6 +21,13 @@ body{
     color: white;
 }
 
+.navbar-nav > li > a.signOut {
+    border-bottom-color: #df3034;
+    border-bottom-width: thin;
+    border-bottom-style: solid;
+    color: white;
+}
+
 .navbar-nav > li > a.addVideoBtn:hover{
     background-color: #005a00;
     color: white;
@@ -37,6 +44,10 @@ body{
     margin-right: 14px;
 }
 
+.navbar-nav > li > a.signOut:hover {
+    background-color: #df3034;
+    color: white;
+}
 
 
 

@@ -5,6 +5,10 @@ html {
     overflow-y: scroll;
 }
 
+.font {
+    font-family: Quattrocento;
+}
+
 /*padding for top navigation*/
 
 .row:first-of-type{
