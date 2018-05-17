@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" th:href="@{/css/AdminCSS.css}">
+
+</head>
+<body>
+
+<div class="flex">
+    <!--Create: <a th:href="@{/adminVideo}" class="bttn">Continue</a> -->
+    <a th:href="@{/adminVideoGrid}" class="bttn">Film</a>
+</div>
+
+<div class="flex dark">
+    <a th:href="@{/adminCreateFoto}" class="bttn-dark">Foto</a>
+</div>
+
+<!--
+<a href="adminVideo.html" th:href="@{/adminVideo}"> <img class="img-fluid" th:src="@{/img/video.jpg}"/></a>
+<a href="adminFoto.html" th:href="@{/adminFoto}"> <img class="img-fluid" th:src="@{/img/foto.jpg}"/></a>
+-->
+</body>
+</html>

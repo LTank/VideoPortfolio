@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<!--Thymeleaf xlmns-->
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+
+<head th:replace="fragments/head :: head(~{::title},~{::link})">
+
+    <!--Bliver injektet i th:replace-->
+    <title>Portfolio</title>
+    <link th:replace="fragments/uiFragments/videoGridFragments :: videoGridCSS"/>
+
+</head>
+<body>
+    <div class="container-fluid">
+        <!--Navbar fragment-->
+        <nav th:replace="fragments/navbars :: publicNav"></nav>
+
+        <!--genre picker fragment-->
+        <div th:replace="fragments/uiFragments/videoGridFragments :: genrePicker"></div>
+
+        <!--VideoGrid Fragment-->
+        <div th:replace="fragments/uiFragments/videoGridFragments :: videoGrid"></div>
+
+        <!--Javascript-->
+        <div th:replace="fragments/scripts :: jqueryAndBootstrap"></div>
+        <div th:replace="fragments/scripts :: genreSortScript"></div>
+    </div>
+</body>
+</html>

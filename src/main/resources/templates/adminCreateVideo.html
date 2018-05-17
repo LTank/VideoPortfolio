@@ -1,0 +1,112 @@
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+<!------ Include the above in your HEAD tag ---------->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="assets/css/bootstrap.css">
+    <link rel="stylesheet" th:href="@{/css/AdminCSS.css}">
+
+
+    <!-- Website CSS style -->
+    <link rel="stylesheet" type="text/css" href="assets/css/main.css">
+
+    <!-- Website Font style -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
+
+    <!-- Google Fonts -->
+    <link href='https://fonts.googleapis.com/css?family=Passion+Onef' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Oxygen' rel='stylesheet' type='text/css'>
+
+    <title>Admin</title>
+</head>
+<body style="background-color: white">
+<div class="container loginWidth">
+    <div class="row main">
+        <div class="panel-heading">
+            <div class="panel-title text-center">
+                <h1 class="title">Update film</h1>
+                <hr />
+            </div>
+        </div>
+        <div class="main-login main-center">
+            <form th:action="@{/addVideo}" class="form-horizontal" method="get" action="#">
+
+                <div class="form-group loginWidth">
+                    <label for="titel" class="cols-sm-2 control-label">Titel</label>
+                    <div class="cols-sm-10">
+                        <div class="input-group">
+                            <span class="input-group-addon"><i class="fa fa-user fa" aria-hidden="true"></i></span>
+                            <input type="text" class="form-control" name="title" id="titel"  placeholder="Titel"/>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="beskrivelse" class="cols-sm-2 control-label">Beskrivelse</label>
+                    <div class="cols-sm-10">
+                        <div class="input-group">
+                            <span class="input-group-addon"><i class="fa fa-user fa" aria-hidden="true"></i></span>
+                            <input type="text" class="form-contro" name="description" id="beskrivelse" placeholder="Beskrivelse"/>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-group loginWidth">
+                    <label for="link" class="cols-sm-2 control-label">VideoURL</label>
+                    <div class="cols-sm-10">
+                        <div class="input-group">
+                            <span class="input-group-addon"><i class="fa fa-users fa" aria-hidden="true"></i></span>
+                            <input type="text" class="form-control" name="videoUrl" id="link"  placeholder="Link"/>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-group loginWidth">
+                    <label for="link2" class="cols-sm-2 control-label">PhotoURL</label>
+                    <div class="cols-sm-10">
+                        <div class="input-group">
+                            <span class="input-group-addon"><i class="fa fa-users fa" aria-hidden="true"></i></span>
+                            <input type="text" class="form-control" name="photoUrl" id="link2"  placeholder="Link"/>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-group loginWidth">
+                    <label for="rankNumber" class="cols-sm-2 control-label">Rank nr</label>
+                    <div class="cols-sm-10">
+                        <div class="input-group">
+                            <span class="input-group-addon"><i class="fa fa-users fa" aria-hidden="true"></i></span>
+                            <input type="text" class="form-control" name="rankNumber" id="rankNumber"  placeholder="Rank"/>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="cols-sm-2 control-label">Vælg genre</label>
+                    <div class="cols-sm-10">
+                        <div class="input-group">
+                            <select name="genre" size="3" class="loginWidth">
+                                <option value="genre1">Genre 1</option>
+                                <option value="genre2">Genre 2</option>
+                                <option value="genre3">Genre 3</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-group ">
+                    <input type="submit" value="Opret" class="btn btn-primary btn-lg btn-block login-button"></button>
+                </div>
+
+            </form>
+        </div>
+    </div>
+</div>
+
+<script type="text/javascript" src="assets/js/bootstrap.js"></script>
+</body>
+</html>

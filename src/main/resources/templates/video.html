@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<!--Thymeleaf xlmns-->
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+
+<head th:replace="fragments/head :: head(~{::title},~{::link})">
+
+    <!--Bliver injektet i th:replace-->
+    <title>Portfolio</title>
+    <link rel="stylesheet" th:href="@{\css\ViewSpecific\video.css}">
+
+</head>
+<body>
+<nav th:insert="fragments/navbars :: publicNav">
+</nav>
+<!--Bootstrap container class; giver margin-->
+<div class="container-fluid">
+    <!--Bootstrap row-->
+    <!--iframe with video-->
+    <div class="row">
+
+        <div class="col-md-12">
+
+            <div class="embed-responsive embed-responsive-16by9" align="center" >
+                <iframe class="embed-responsive-item" th:attr="src=${thisVideo.videoUrl}" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            <span class="h3 viewFont title" th:text="${thisVideo.title}"></span>
+            <div class="div-width "></div>
+        </div>
+    </div>
+    <div class="row row-content">
+
+        <div class="col-sm-12 div-bottom-space">
+            <span class="viewFont" th:text="${thisVideo.description}"></span>
+        </div>
+        <div class="col-sm-12 bottom-space">
+            <div class="div-bottom-space viewFont"  th:if="${thisVideo.director} != ''" th:text="'Instruktør: ' + ${thisVideo.director}"></div>
+            <div class="div-bottom-space viewFont" th:if="${thisVideo.production} != ''" th:text="'Produktion: ' + ${thisVideo.production}"></div>
+            <div class="div-bottom-space viewFont" th:if="${thisVideo.equipment} != ''" th:text="'Udstyr: ' + ${thisVideo.equipment}"></div>
+        </div>
+    </div>
+</div>
+
+<div th:replace="fragments/scripts :: jqueryAndBootstrap"></div>
+</body>
+</html>

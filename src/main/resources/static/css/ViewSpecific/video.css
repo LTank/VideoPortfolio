@@ -1,0 +1,38 @@
+.div-width {
+    padding: 15px;
+}
+
+.viewFont {
+    font-family: "Quattrocento";
+}
+
+.title {
+    position: relative;
+    top: 10px;
+
+}
+
+/*.description {
+    position: relative;
+    top: 35px;
+    left: 150px;
+}*/
+
+.col-md-12 {
+    height: 80%;
+    width: 80%;
+    margin-left: 10%;
+}
+
+.row-content {
+    width: 80%;
+    margin-left: 10%;
+}
+
+.bottom-space {
+    margin-bottom: 100px;
+}
+
+.div-bottom-space {
+    margin-bottom: 15px;
+}

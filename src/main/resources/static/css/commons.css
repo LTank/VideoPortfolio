@@ -1,0 +1,58 @@
+/*This is to prevent the "centering jumps"
+when navigating back and forth between pages with enough
+content to have a vertical scroll bar and pages that do not.*/
+html {
+    overflow-y: scroll;
+}
+
+.font {
+    font-family: Quattrocento;
+}
+
+/*padding for top navigation*/
+
+.row:first-of-type{
+    padding-top: 80px;
+}
+
+/*Centering of navbar*/
+.navbar-nav {
+    width: 100%;
+    text-align: center;
+    margin-bottom: 0px;
+}
+
+.adminNavbar {
+    width: initial;
+}
+.navbar-nav > li {
+    float: none;
+    display: inline-block;
+}
+
+.navbar.navbar-inverse.navbar-fixed-top {
+    margin-bottom: 0px;
+}
+
+@media screen and (max-width: 335px) {
+
+    .navbar-nav {
+        margin: 7.5px 0px;
+    }
+
+    .nav > li > a {
+        position: relative;
+        display: block;
+        padding: 10px 7px;
+    }
+
+}
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,54 @@
+body{
+    /*Fixer bug med modaler der skubber hele viewet 17px til venstre ved popup*/
+    padding-right: 0px !important;
+}
+
+.modal {
+    color: black;
+}
+
+.navbar-nav > li > a.addVideoBtn{
+    border-bottom-color: #009b00;
+    border-bottom-width: thin;
+    border-bottom-style: solid;
+    color: white;
+}
+
+.navbar-nav > li > a.backBtn {
+    border-bottom-color: #f2b700;
+    border-bottom-width: thin;
+    border-bottom-style: solid;
+    color: white;
+}
+
+.navbar-nav > li > a.signOut {
+    border-bottom-color: #df3034;
+    border-bottom-width: thin;
+    border-bottom-style: solid;
+    color: white;
+}
+
+.navbar-nav > li > a.addVideoBtn:hover{
+    background-color: #005a00;
+    color: white;
+}
+
+.navbar-nav > li > a.backBtn:hover {
+    background-color: #dfa500;
+    color: white;
+}
+
+.container-fluid > h1.navbar-header {
+    margin-top: 6px;
+    margin-bottom: 0;
+    margin-right: 14px;
+}
+
+.navbar-nav > li > a.signOut:hover {
+    background-color: #df3034;
+    color: white;
+}
+
+
+
+
